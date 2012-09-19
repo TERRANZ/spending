@@ -18,6 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".core.db.ProjectContentProvider"
+            android:authorities="ru.terra.spending.entity" >
+        </provider>
     </application>
 
 </manifest>
