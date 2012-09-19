@@ -1,75 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/RelativeLayout1"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sv_wrapper"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/tv_date_lbl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
-        android:text="Когда?" />
-
-    <EditText
-        android:id="@+id/et_date"
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tv_date_lbl"
-        android:layout_margin="5dp"
-        android:ems="10"
-        android:inputType="date" />
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/tv_spending_type_lbl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_date"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
-        android:text="На что тратим?" />
+        <TextView
+            android:id="@+id/tv_date_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:text="Когда?" />
 
-    <Spinner
-        android:id="@+id/sp_spending_type"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_spending_type_lbl"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp" />
+        <EditText
+            android:id="@+id/et_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_date_lbl"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:inputType="date" />
 
-    <TextView
-        android:id="@+id/tv_spending_money_lbl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sp_spending_type"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
-        android:text="Сколько потратили?" />
+        <TextView
+            android:id="@+id/tv_spending_type_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_date"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:text="На что тратим?" />
 
-    <EditText
-        android:id="@+id/et_spending_money"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_spending_money_lbl"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
-        android:ems="10"
-        android:inputType="numberSigned" >
+        <Spinner
+            android:id="@+id/sp_spending_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_spending_type_lbl"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp" />
 
-        <requestFocus />
-    </EditText>
+        <TextView
+            android:id="@+id/tv_spending_money_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sp_spending_type"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:text="Сколько потратили?" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_spending_money"
-        android:layout_centerHorizontal="true"
-        android:text="Потрачено" 
-        android:onClick="spended"/>
+        <EditText
+            android:id="@+id/et_spending_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_spending_money_lbl"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:inputType="numberSigned" >
 
-</RelativeLayout>
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_spending_money"
+            android:layout_centerHorizontal="true"
+            android:onClick="spended"
+            android:text="Потрачено" />
+    </RelativeLayout>
+
+</ScrollView>

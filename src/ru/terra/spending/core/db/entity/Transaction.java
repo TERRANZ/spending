@@ -5,6 +5,6 @@ public class Transaction
 	public Long id;
 	public Long date;
 	public Double money;
-	public Type type;
+	public Long type;
 	public String comment;
 }
