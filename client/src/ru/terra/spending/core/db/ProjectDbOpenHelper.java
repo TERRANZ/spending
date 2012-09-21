@@ -4,8 +4,6 @@ import roboguice.inject.ContextSingleton;
 import ru.terra.spending.R;
 import ru.terra.spending.core.Constants;
 import ru.terra.spending.core.IOHelper;
-import ru.terra.spending.core.db.entity.TypeDBEntity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;

@@ -13,12 +13,10 @@ import ru.terra.spending.activity.components.TransactionsListCursorAdapter;
 import ru.terra.spending.activity.components.TypesSpinnerAdapter;
 import ru.terra.spending.core.DateHelper;
 import ru.terra.spending.core.ProjectModule;
-import ru.terra.spending.core.db.entity.Transaction;
 import ru.terra.spending.core.db.entity.TransactionDBEntity;
-import ru.terra.spending.core.db.entity.Type;
 import ru.terra.spending.core.db.entity.TypeDBEntity;
-import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -35,13 +33,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.app.TimePickerDialog;
 
 import com.viewpagerindicator.TitlePageIndicator;
 
@@ -214,7 +210,8 @@ public class MainActivity extends RoboActivity
 		Editor e = prefs.edit();
 		e.putBoolean("first_start", false);
 		e.commit();
-		ContentValues[] cvs = new ContentValues[4];
+		//TODO: replace by server-side configuration
+		ContentValues[] cvs = new ContentValues[5];
 		ContentValues cv0 = new ContentValues();
 		cv0.put(TypeDBEntity.NAME, "Обед");
 		cvs[0] = cv0;
@@ -224,9 +221,12 @@ public class MainActivity extends RoboActivity
 		ContentValues cv2 = new ContentValues();
 		cv2.put(TypeDBEntity.NAME, "Домой");
 		cvs[2] = cv2;
+		ContentValues cv3 = new ContentValues();
+		cv3.put(TypeDBEntity.NAME, "Ништяки");
+		cvs[3] = cv3;
 		ContentValues cv4 = new ContentValues();
-		cv4.put(TypeDBEntity.NAME, "Ништяки");
-		cvs[3] = cv4;
+		cv4.put(TypeDBEntity.NAME, "Проезд");
+		cvs[4] = cv4;
 		ContentResolver cr = getContentResolver();
 		cr.bulkInsert(TypeDBEntity.CONTENT_URI, cvs);
 	}
