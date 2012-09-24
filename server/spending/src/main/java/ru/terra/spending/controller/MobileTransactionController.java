@@ -9,20 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import ru.terra.spending.dto.LoginDto;
-
+import ru.terra.spending.dto.LoginDTO;
 import flexjson.JSONSerializer;
-
 
 @Controller
 public class MobileTransactionController
 {
-	@RequestMapping(value = "/spending/do.login.json", method = RequestMethod.GET)
-	public ResponseEntity<String> mobileLogin(HttpServletRequest request)
-	{
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("Content-Type", "application/json; charset=utf-8");
-		String json = new JSONSerializer().serialize(new LoginDto());
-		return new ResponseEntity<String>(json, headers, HttpStatus.OK);
-	}
+
 }
