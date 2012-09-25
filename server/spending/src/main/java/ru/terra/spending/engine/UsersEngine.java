@@ -1,6 +1,5 @@
 package ru.terra.spending.engine;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -12,11 +11,11 @@ import ru.terra.spending.db.entity.controller.UserJpaController;
 
 @Singleton
 @Component
-public class LoginEngine
+public class UsersEngine
 {
 	private UserJpaController ujpc;
 
-	public LoginEngine()
+	public UsersEngine()
 	{
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("spending-dbPU");
 		ujpc = new UserJpaController(emf);
@@ -48,5 +47,10 @@ public class LoginEngine
 	{
 		User u = ujpc.findUser(login, password);
 		return u != null;
+	}
+
+	public User getUser(Integer uid)
+	{
+		return ujpc.findUser(uid);
 	}
 }

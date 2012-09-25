@@ -1,9 +1,9 @@
 package ru.terra.spending.engine;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -39,8 +39,13 @@ public class TransactionEngine
 		return tr.getId();
 	}
 
-	public List<TransactionDTO> getTransactions(User user)
+	public List<TransactionDTO> getTransactions(Long uid)
 	{
-		return null;
-	}
+		List<TransactionDTO> ret = new LinkedList<TransactionDTO>();
+		for (Transaction t : tjcp.findTransactionEntities(uid))
+		{
+			ret.add(new TransactionDTO(t));
+		}
+		return ret;
+	}	
 }

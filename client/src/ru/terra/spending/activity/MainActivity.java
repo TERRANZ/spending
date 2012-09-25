@@ -15,6 +15,7 @@ import ru.terra.spending.core.DateHelper;
 import ru.terra.spending.core.ProjectModule;
 import ru.terra.spending.core.db.entity.TransactionDBEntity;
 import ru.terra.spending.core.db.entity.TypeDBEntity;
+import ru.terra.spending.core.tasks.PushTransactionsAsyncTask;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.ContentResolver;
@@ -210,7 +211,7 @@ public class MainActivity extends RoboActivity
 		Editor e = prefs.edit();
 		e.putBoolean("first_start", false);
 		e.commit();
-		//TODO: replace by server-side configuration
+		// TODO: replace by server-side configuration
 		ContentValues[] cvs = new ContentValues[5];
 		ContentValues cv0 = new ContentValues();
 		cv0.put(TypeDBEntity.NAME, "Обед");
@@ -238,6 +239,11 @@ public class MainActivity extends RoboActivity
 		cv.put(TransactionDBEntity.DATE, (Long) etDate.getTag());
 		cv.put(TransactionDBEntity.TYPE, stype);
 		getContentResolver().insert(TransactionDBEntity.CONTENT_URI, cv);
-		etMoney.getText().clear();		
+		etMoney.getText().clear();
+	}
+
+	public void pushTransactions(View v)
+	{
+		new PushTransactionsAsyncTask(this).execute();
 	}
 }

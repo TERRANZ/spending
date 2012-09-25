@@ -6,12 +6,14 @@ package ru.terra.spending.db.entity.controller;
 
 import java.io.Serializable;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+
 import ru.terra.spending.db.entity.TrType;
 import ru.terra.spending.db.entity.Transaction;
 import ru.terra.spending.db.entity.User;
@@ -188,6 +190,19 @@ public class TransactionJpaController implements Serializable
 	public List<Transaction> findTransactionEntities(int maxResults, int firstResult)
 	{
 		return findTransactionEntities(false, maxResults, firstResult);
+	}
+
+	public List<Transaction> findTransactionEntities(Long user)
+	{
+		EntityManager em = getEntityManager();
+		try
+		{
+			Query q = em.createNamedQuery("Transaction.findByUser").setParameter("uid", user);
+			return q.getResultList();
+		} finally
+		{
+			em.close();
+		}
 	}
 
 	private List<Transaction> findTransactionEntities(boolean all, int maxResults, int firstResult)
