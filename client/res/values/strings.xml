@@ -4,5 +4,5 @@
     <string name="pull_to_refresh_release_label">Отпустите для обновления</string>
     <string name="pull_to_refresh_refreshing_label">Обновляем…</string>
     <string name="cache_dir">spending_cache</string>    
-    <string name="server_address">http://192.168.1.1:8080/spending</string>
+    <string name="server_address">http://terranout.ath.cx:81/spending</string>
 </resources>
