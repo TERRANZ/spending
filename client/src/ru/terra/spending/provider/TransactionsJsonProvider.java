@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.preference.PreferenceManager;
+import ru.terra.spending.core.Constants;
 import ru.terra.spending.core.db.entity.TransactionDBEntity;
 import ru.terra.spending.core.network.JsonAbstractProvider;
 import ru.terra.spending.core.network.dto.OperationResultDTO;
@@ -30,7 +31,7 @@ public class TransactionsJsonProvider extends JsonAbstractProvider
 		try
 		{
 			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(cntxActivity);
-			Long lastSyncDate = prefs.getLong("syncdate", 0L);
+			Long lastSyncDate = prefs.getLong(Constants.CONFIG_LAST_SYNC_TO_SERVER, 0L);
 			Cursor c = cntxActivity.getContentResolver().query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.DATE + " >= ?",
 					new String[] { lastSyncDate.toString() }, null);
 			List<TransactionDTO> dtos = new ArrayList<TransactionDTO>();
