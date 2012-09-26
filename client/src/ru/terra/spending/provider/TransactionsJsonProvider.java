@@ -1,6 +1,7 @@
 package ru.terra.spending.provider;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.http.message.BasicNameValuePair;
@@ -9,6 +10,7 @@ import com.google.gson.Gson;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.preference.PreferenceManager;
 import ru.terra.spending.core.db.entity.TransactionDBEntity;
@@ -27,10 +29,10 @@ public class TransactionsJsonProvider extends JsonAbstractProvider
 
 	public void pushTransactions()
 	{
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(cntxActivity);
+		Long lastSyncDate = prefs.getLong("syncdate", 0L);
 		try
 		{
-			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(cntxActivity);
-			Long lastSyncDate = prefs.getLong("syncdate", 0L);
 			Cursor c = cntxActivity.getContentResolver().query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.DATE + " >= ?",
 					new String[] { lastSyncDate.toString() }, null);
 			List<TransactionDTO> dtos = new ArrayList<TransactionDTO>();
@@ -47,10 +49,16 @@ public class TransactionsJsonProvider extends JsonAbstractProvider
 				OperationResultDTO res = new Gson().fromJson(json, OperationResultDTO.class);
 				Logger.i("pushTransacton", "pushed: " + res.retid);
 			}
+			lastSyncDate = new Date().getTime();
 		} catch (Exception e)
 		{
 			Logger.i("pushTransacton", "error: " + e.getMessage());
+			lastSyncDate = 0L;
+			e.printStackTrace();
 		}
+		Editor editor = prefs.edit();
+		editor.putLong("syncdate", lastSyncDate);
+		editor.commit();
 	}
 
 	private TransactionDTO pushTransaction(Cursor c)
