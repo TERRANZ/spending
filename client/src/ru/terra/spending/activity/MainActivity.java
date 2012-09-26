@@ -16,6 +16,7 @@ import ru.terra.spending.core.ProjectModule;
 import ru.terra.spending.core.db.entity.TransactionDBEntity;
 import ru.terra.spending.core.db.entity.TypeDBEntity;
 import ru.terra.spending.core.tasks.PushTransactionsAsyncTask;
+import ru.terra.spending.core.tasks.RecvTypesAsyncTask;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.ContentResolver;
@@ -30,6 +31,9 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -211,25 +215,6 @@ public class MainActivity extends RoboActivity
 		Editor e = prefs.edit();
 		e.putBoolean("first_start", false);
 		e.commit();
-		// TODO: replace by server-side configuration
-		ContentValues[] cvs = new ContentValues[5];
-		ContentValues cv0 = new ContentValues();
-		cv0.put(TypeDBEntity.NAME, "Обед");
-		cvs[0] = cv0;
-		ContentValues cv1 = new ContentValues();
-		cv1.put(TypeDBEntity.NAME, "Бензин");
-		cvs[1] = cv1;
-		ContentValues cv2 = new ContentValues();
-		cv2.put(TypeDBEntity.NAME, "Домой");
-		cvs[2] = cv2;
-		ContentValues cv3 = new ContentValues();
-		cv3.put(TypeDBEntity.NAME, "Ништяки");
-		cvs[3] = cv3;
-		ContentValues cv4 = new ContentValues();
-		cv4.put(TypeDBEntity.NAME, "Проезд");
-		cvs[4] = cv4;
-		ContentResolver cr = getContentResolver();
-		cr.bulkInsert(TypeDBEntity.CONTENT_URI, cvs);
 	}
 
 	public void spended(View v)
@@ -242,8 +227,31 @@ public class MainActivity extends RoboActivity
 		etMoney.getText().clear();
 	}
 
-	public void pushTransactions(View v)
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
 	{
-		new PushTransactionsAsyncTask(this).execute();
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.m_main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		switch (item.getItemId())
+		{
+		case R.id.mi_main_recv_types:
+		{
+			new RecvTypesAsyncTask(this).execute();
+			return true;
+		}
+		case R.id.mi_main_send_transactions:
+		{
+			new PushTransactionsAsyncTask(this).execute();
+			return true;
+		}
+		default:
+			return false;
+		}
 	}
 }

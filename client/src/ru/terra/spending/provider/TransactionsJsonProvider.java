@@ -31,7 +31,7 @@ public class TransactionsJsonProvider extends JsonAbstractProvider
 	public void pushTransactions()
 	{
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(cntxActivity);
-		Long lastSyncDate = prefs.getLong(Constants.CONFIG_LAST_SYNC_TO_SERVER, 0L);
+		Long lastSyncDate = prefs.getLong(Constants.CONFIG_LAST_SYNC_TRANSACTIONS_TO_SERVER, 0L);
 		try
 		{
 			Cursor c = cntxActivity.getContentResolver().query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.DATE + " >= ?",
@@ -58,7 +58,7 @@ public class TransactionsJsonProvider extends JsonAbstractProvider
 			e.printStackTrace();
 		}
 		Editor editor = prefs.edit();
-		editor.putLong("syncdate", lastSyncDate);
+		editor.putLong(Constants.CONFIG_LAST_SYNC_TRANSACTIONS_TO_SERVER, lastSyncDate);
 		editor.commit();
 	}
 

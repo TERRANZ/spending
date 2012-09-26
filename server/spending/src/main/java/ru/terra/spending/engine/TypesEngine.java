@@ -1,5 +1,7 @@
 package ru.terra.spending.engine;
 
+import java.util.List;
+
 import javax.inject.Singleton;
 import javax.persistence.Persistence;
 
@@ -21,5 +23,10 @@ public class TypesEngine
 	public TrType getType(Integer id)
 	{
 		return ttjcp.findTrType(id);
+	}
+
+	public List<TrType> getTypes()
+	{
+		return ttjcp.findTrTypeEntities();
 	}
 }

@@ -17,10 +17,21 @@ public class ProjectDbOpenHelper extends SQLiteOpenHelper
 
 	Context context;
 
+	private int getResourceId(int oldver, int newver)
+	{
+		if (oldver == 1 && newver == 2)
+			return R.raw.patch1to2;
+		else if (oldver == 1 && newver == 3)
+			return R.raw.patch1to3;
+		else if (oldver == 2 && newver == 3)
+			return R.raw.patch2to3;
+		return 0;
+	}
+
 	@Inject
 	public ProjectDbOpenHelper(Context context)
 	{
-		super(context, Constants.DB_NAME, null, 3);
+		super(context, Constants.DB_NAME, null, Constants.DB_VERSION);
 		this.context = context;
 	}
 
@@ -36,7 +47,13 @@ public class ProjectDbOpenHelper extends SQLiteOpenHelper
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
 	{
-		// TODO code that updates db schema should be here
+//		if (newVersion > oldVersion)
+//		{
+//			int stages = newVersion - oldVersion;
+//			String sql = IOHelper.readResourceAsString(context, getResourceId(oldVersion, newVersion);
+//			String[] strings = sql.split(";");
+//			executeStatements(strings, db);
+//		}
 	}
 
 	private void executeStatements(String[] strings, SQLiteDatabase db)

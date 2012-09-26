@@ -1,6 +1,7 @@
 CREATE TABLE types (
   _id INTEGER PRIMARY KEY,
-  name text
+  name text,
+  server_id integer
 );
 
 CREATE TABLE tr (

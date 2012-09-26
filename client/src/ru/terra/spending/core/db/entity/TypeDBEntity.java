@@ -12,4 +12,5 @@ public interface TypeDBEntity extends BaseColumns
 	String CONTENT_ITEM_TYPE = "entity.cursor.item/types";
 
 	String NAME = "name";
+	String ID = "server_id";
 }
