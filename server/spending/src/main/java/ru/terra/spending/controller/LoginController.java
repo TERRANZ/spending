@@ -13,6 +13,8 @@ import java.util.Locale;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ru.terra.spending.HomeController;
 import ru.terra.spending.ResponceUtils;
 import ru.terra.spending.dto.LoginDTO;
 import ru.terra.spending.engine.UsersEngine;
@@ -29,6 +32,7 @@ import flexjson.JSONSerializer;
 @Controller
 public class LoginController
 {
+	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@Inject
 	private UsersEngine le;
@@ -79,7 +83,7 @@ public class LoginController
 		{
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("Content-Type", "application/json; charset=utf-8");
-			final String address = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/login/do.login";
+			final String address = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/spending/do.login";
 			URL url = new URL(address);
 			HttpURLConnection conn = prepareConnection(url);
 			conn.connect();
@@ -126,16 +130,25 @@ public class LoginController
 				ret.session = cookie;
 				ret.logged = true;
 			}
-			BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			String line;
-			while ((line = rd.readLine()) != null)
+			try
 			{
-				// LOG.info("HTTP POST respone: " + line);
+				BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				String line;
+				while ((line = rd.readLine()) != null)
+				{
+					logger.info("HTTP POST respone: " + line);
+				}
+				wr.close();
+				rd.close();
+			} catch (IOException e)
+			{
+				ret.session = "";
+				ret.logged = false;
 			}
-			wr.close();
-			rd.close();
 		} catch (IOException e)
 		{
+			logger.info("Exception while reading responce from server " + e.getMessage());
+			//e.printStackTrace();
 		}
 		String json = new JSONSerializer().serialize(ret);
 		return ResponceUtils.makeResponce(json);

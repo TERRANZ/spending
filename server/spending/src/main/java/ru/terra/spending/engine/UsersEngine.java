@@ -4,15 +4,21 @@ import javax.inject.Singleton;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import ru.terra.spending.db.entity.User;
 import ru.terra.spending.db.entity.controller.UserJpaController;
+import ru.terra.spending.web.security.TUserDetailService;
 
 @Singleton
 @Component
 public class UsersEngine
 {
+
+	private static final Logger logger = LoggerFactory.getLogger(UsersEngine.class);
+
 	private UserJpaController ujpc;
 
 	public UsersEngine()
@@ -56,6 +62,7 @@ public class UsersEngine
 
 	public User findUserByName(String name)
 	{
+		logger.info("findUserByName " + name);
 		return ujpc.findUser(name);
 	}
 }
