@@ -119,7 +119,8 @@ public class LoginController
 				{
 					// user valid!
 					// code 200
-					ret.session = cookie;
+					logger.info("cookie = " + cookie);
+					ret.session = cookie.length() > 0 ? cookie.substring(cookie.indexOf("JSESSIONID=") + 11, cookie.indexOf(";")) : "";
 					ret.logged = true;
 				}
 			}
@@ -127,7 +128,8 @@ public class LoginController
 			{
 				// user valid!
 				// code 200
-				ret.session = cookie;
+				logger.info("cookie = " + cookie);
+				ret.session = cookie.length() > 0 ? cookie.substring(cookie.indexOf("JSESSIONID="), cookie.indexOf(";")) : "";
 				ret.logged = true;
 			}
 			try
@@ -148,7 +150,7 @@ public class LoginController
 		} catch (IOException e)
 		{
 			logger.info("Exception while reading responce from server " + e.getMessage());
-			//e.printStackTrace();
+			// e.printStackTrace();
 		}
 		String json = new JSONSerializer().serialize(ret);
 		return ResponceUtils.makeResponce(json);
