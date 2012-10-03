@@ -43,6 +43,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.viewpagerindicator.TitlePageIndicator;
 
@@ -243,11 +244,13 @@ public class MainActivity extends RoboActivity
 		case R.id.mi_main_recv_types:
 		{
 			new RecvTypesAsyncTask(this).execute();
+			Toast.makeText(this, "Синхронизируем типы трат", Toast.LENGTH_SHORT).show();
 			return true;
 		}
 		case R.id.mi_main_send_transactions:
 		{
 			new PushTransactionsAsyncTask(this).execute();
+			Toast.makeText(this, "Синхронизируем траты", Toast.LENGTH_SHORT).show();
 			return true;
 		}
 		default:

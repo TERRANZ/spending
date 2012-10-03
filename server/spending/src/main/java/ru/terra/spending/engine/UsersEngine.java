@@ -53,4 +53,9 @@ public class UsersEngine
 	{
 		return ujpc.findUser(uid);
 	}
+
+	public User findUserByName(String name)
+	{
+		return ujpc.findUser(name);
+	}
 }

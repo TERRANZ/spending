@@ -38,9 +38,9 @@ public class TransactionsJsonProvider extends JsonAbstractProvider
 					new String[] { lastSyncDate.toString() }, null);
 			List<TransactionDTO> dtos = new ArrayList<TransactionDTO>();
 			if (c.moveToFirst())
-				dtos.add(pushTransaction(c));
+				dtos.add(new TransactionDTO(c));
 			while (c.moveToNext())
-				dtos.add(pushTransaction(c));
+				dtos.add(new TransactionDTO(c));
 			for (TransactionDTO dto : dtos)
 			{
 				String json = httpReqHelper.runJsonRequest("/mobiletransaction/do.transaction.register.json",
@@ -60,14 +60,5 @@ public class TransactionsJsonProvider extends JsonAbstractProvider
 		Editor editor = prefs.edit();
 		editor.putLong(Constants.CONFIG_LAST_SYNC_TRANSACTIONS_TO_SERVER, lastSyncDate);
 		editor.commit();
-	}
-
-	private TransactionDTO pushTransaction(Cursor c)
-	{
-		TransactionDTO dto = new TransactionDTO();
-		dto.date = c.getLong(c.getColumnIndex(TransactionDBEntity.DATE));
-		dto.type = c.getInt(c.getColumnIndex(TransactionDBEntity.TYPE));
-		dto.value = c.getDouble(c.getColumnIndex(TransactionDBEntity.MONEY));
-		return dto;
 	}
 }
