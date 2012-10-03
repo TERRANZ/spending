@@ -58,7 +58,6 @@
 		<beans:property name="mediaTypes">
 			<util:map>
 				<beans:entry key="json" value="application/json" />
-				<!--beans:entry key="xml" value="text/html" / -->
 			</util:map>
 		</beans:property>
 		<beans:property name="defaultViews">
@@ -69,10 +68,6 @@
 						<beans:ref bean="JacksonObjectMapper" />
 					</beans:property>
 				</beans:bean>
-
-				<!--beans:bean class="org.springframework.web.servlet.view.xml.MarshallingView"> 
-					<beans:property name="marshaller"> <beans:ref bean="Jaxb2Marshaller" /> </beans:property> 
-					</beans:bean -->
 			</util:list>
 		</beans:property>
 		<beans:property name="favorPathExtension" value="false" />

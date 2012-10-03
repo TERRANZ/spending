@@ -8,6 +8,6 @@
 	<h1>Hello world!</h1>
 
 	<P>The time on the server is ${serverTime}.</P>
-	<a href="/spendin/login">Вход</a>
+	<a href="/spending/login">Вход</a>
 </body>
 </html>

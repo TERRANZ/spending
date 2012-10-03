@@ -1,5 +1,8 @@
 package ru.terra.spending.web.security;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.inject.Inject;
 
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,13 +14,15 @@ import ru.terra.spending.engine.UsersEngine;
 
 public class TUserDetailService implements UserDetailsService
 {
-
 	@Inject
 	private UsersEngine ue;
 
+	
+	
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException
 	{
+		Logger.getLogger("TUserDetailService").log(Level.INFO, "loadUserByUsername " + userName);
 		User user = ue.findUserByName(userName);
 		if (user != null)
 		{
