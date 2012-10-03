@@ -1,7 +1,10 @@
 package ru.terra.spending.engine;
 
+import java.util.concurrent.ExecutionException;
+
 import javax.inject.Singleton;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 
 import org.slf4j.Logger;
@@ -10,6 +13,8 @@ import org.springframework.stereotype.Component;
 
 import ru.terra.spending.db.entity.User;
 import ru.terra.spending.db.entity.controller.UserJpaController;
+import ru.terra.spending.db.entity.controller.exceptions.IllegalOrphanException;
+import ru.terra.spending.db.entity.controller.exceptions.NonexistentEntityException;
 import ru.terra.spending.web.security.TUserDetailService;
 
 @Singleton
@@ -63,6 +68,36 @@ public class UsersEngine
 	public User findUserByName(String name)
 	{
 		logger.info("findUserByName " + name);
-		return ujpc.findUser(name);
+		User u = null;
+		try
+		{
+			u = ujpc.findUser(name);
+		} catch (NoResultException e)
+		{
+			logger.info("error while loading user " + e.getMessage());
+			e.printStackTrace();
+		}
+		return u;
+	}
+
+	public boolean saveUser(User u)
+	{
+		try
+		{
+			ujpc.edit(u);
+		} catch (IllegalOrphanException e)
+		{
+			e.printStackTrace();
+			return false;
+		} catch (NonexistentEntityException e)
+		{
+			e.printStackTrace();
+			return false;
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 }

@@ -10,6 +10,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Locale;
 
+import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import ru.terra.spending.HomeController;
 import ru.terra.spending.ResponceUtils;
+import ru.terra.spending.db.entity.User;
 import ru.terra.spending.dto.LoginDTO;
 import ru.terra.spending.engine.UsersEngine;
 import flexjson.JSONSerializer;
@@ -36,6 +39,9 @@ public class LoginController
 
 	@Inject
 	private UsersEngine le;
+
+	@Resource(name = "passwordEncoder")
+	private PasswordEncoder passwordEncoder;
 
 	private HttpURLConnection prepareConnection(URL url) throws IOException
 	{
@@ -138,7 +144,7 @@ public class LoginController
 				String line;
 				while ((line = rd.readLine()) != null)
 				{
-					logger.info("HTTP POST respone: " + line);
+					//logger.info("HTTP POST respone: " + line);
 				}
 				wr.close();
 				rd.close();
@@ -156,21 +162,32 @@ public class LoginController
 		return ResponceUtils.makeResponce(json);
 	}
 
-	@RequestMapping(value = "/login/do.register.json", method = RequestMethod.GET)
+	@RequestMapping(value = "/login/do.register.json", method = RequestMethod.POST)
 	public ResponseEntity<String> register(HttpServletRequest request)
 	{
 		LoginDTO ret = new LoginDTO();
 		String login = request.getParameter("login");
-		String pass = request.getParameter("pass");
-		if (login != null && pass != null)
+		if (login != null && le.findUserByName(login) == null)
 		{
-			Integer retId = le.registerUser(login, pass);
-			ret.logged = true;
-			ret.id = retId;
+			String pass = request.getParameter("pass");
+			if (login != null && pass != null)
+			{
+				Integer retId = le.registerUser(login, pass);
+				ret.logged = true;
+				ret.id = retId;
+				User u = le.getUser(retId);
+				u.setPassword(passwordEncoder.encodePassword(pass, u.getId()));
+				le.saveUser(u);
+			}
+			else
+			{
+				ret.logged = false;
+			}
 		}
 		else
 		{
 			ret.logged = false;
+			ret.message = "User already exists";
 		}
 		String json = new JSONSerializer().serialize(ret);
 		return ResponceUtils.makeResponce(json);
