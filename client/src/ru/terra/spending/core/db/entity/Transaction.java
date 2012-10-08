@@ -7,4 +7,5 @@ public class Transaction
 	public Double money;
 	public Long type;
 	public String comment;
+	public Long server_id;
 }

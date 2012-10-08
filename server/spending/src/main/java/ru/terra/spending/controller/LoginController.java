@@ -163,11 +163,11 @@ public class LoginController
 		return ResponceUtils.makeResponce(json);
 	}
 
-	@RequestMapping(value = URLConstants.DoJson.LOGIN_DO_LOGIN_JSON, method = RequestMethod.POST)
+	@RequestMapping(value = URLConstants.DoJson.LOGIN_DO_REGISTER_JSON, method = RequestMethod.POST)
 	public ResponseEntity<String> register(HttpServletRequest request)
 	{
 		LoginDTO ret = new LoginDTO();
-		String login = request.getParameter("login");
+		String login = request.getParameter("user");
 		if (login != null && le.findUserByName(login) == null)
 		{
 			String pass = request.getParameter("pass");

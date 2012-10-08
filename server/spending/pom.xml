@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ru.terra</groupId>
 	<artifactId>spending</artifactId>
-	<name>abc</name>
+	<name>spending</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>

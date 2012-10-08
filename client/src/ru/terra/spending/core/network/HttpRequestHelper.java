@@ -21,7 +21,9 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import ru.terra.spending.R;
+import ru.terra.spending.core.Constants;
 import ru.terra.spending.util.Logger;
+import ru.terra.spending.util.SettingsUtil;
 import android.app.Activity;
 
 //Синхронные вызовы rest сервисов, вызывать только внутри асинхронной таски
@@ -55,7 +57,7 @@ public class HttpRequestHelper
 		StringBuilder builder = new StringBuilder();
 		try
 		{
-			// httpRequest.setHeader("Cookie", new UserProvider(cntx).getSessionId());
+			httpRequest.setHeader("Cookie", SettingsUtil.getSetting(cntx, Constants.CONFIG_SESSION, ""));
 			HttpResponse response = null;
 			try
 			{

@@ -10,5 +10,6 @@ CREATE TABLE tr (
   t_money text,
   t_type integer,
   t_comment text,
+  t_serverid integer,
   foreign key (t_type) references types(_id)
 );

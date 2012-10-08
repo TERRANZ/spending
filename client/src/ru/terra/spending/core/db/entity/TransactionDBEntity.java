@@ -15,4 +15,5 @@ public interface TransactionDBEntity extends BaseColumns
 	String MONEY = "t_money";
 	String TYPE = "t_type";
 	String COMMENT = "t_comment";
+	String SERVER_ID = "t_serverid";
 }

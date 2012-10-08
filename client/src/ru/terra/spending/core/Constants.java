@@ -8,5 +8,5 @@ public interface Constants
 	String CONFIG_LAST_SYNC_TRANSACTIONS_TO_SERVER = "transactions.last_sync_to_server";
 	String CONFIG_LAST_SYNC_TYPES_TO_SERVER = "types.last_sync_to_server";
 	String CONFIG_UID = "uid";
-	String CONFIG_SESSION = "session";
+	String CONFIG_SESSION = "sessionid";
 }

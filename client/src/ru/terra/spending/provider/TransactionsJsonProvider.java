@@ -6,19 +6,21 @@ import java.util.List;
 
 import org.apache.http.message.BasicNameValuePair;
 
-import com.google.gson.Gson;
-
-import android.app.Activity;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.database.Cursor;
-import android.preference.PreferenceManager;
 import ru.terra.spending.core.Constants;
+import ru.terra.spending.core.constants.URLConstants;
 import ru.terra.spending.core.db.entity.TransactionDBEntity;
 import ru.terra.spending.core.network.JsonAbstractProvider;
 import ru.terra.spending.core.network.dto.OperationResultDTO;
 import ru.terra.spending.core.network.dto.TransactionDTO;
 import ru.terra.spending.util.Logger;
+import android.app.Activity;
+import android.content.ContentValues;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.database.Cursor;
+import android.preference.PreferenceManager;
+
+import com.google.gson.Gson;
 
 public class TransactionsJsonProvider extends JsonAbstractProvider
 {
@@ -34,8 +36,9 @@ public class TransactionsJsonProvider extends JsonAbstractProvider
 		Long lastSyncDate = prefs.getLong(Constants.CONFIG_LAST_SYNC_TRANSACTIONS_TO_SERVER, 0L);
 		try
 		{
-			Cursor c = cntxActivity.getContentResolver().query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.DATE + " >= ?",
-					new String[] { lastSyncDate.toString() }, null);
+			Cursor c = cntxActivity.getContentResolver()
+					.query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.DATE + " >= ? AND " + TransactionDBEntity.SERVER_ID + " = -1",
+							new String[] { lastSyncDate.toString() }, null);
 			List<TransactionDTO> dtos = new ArrayList<TransactionDTO>();
 			if (c.moveToFirst())
 				dtos.add(new TransactionDTO(c));
@@ -43,12 +46,18 @@ public class TransactionsJsonProvider extends JsonAbstractProvider
 				dtos.add(new TransactionDTO(c));
 			for (TransactionDTO dto : dtos)
 			{
-				String json = httpReqHelper.runJsonRequest("/mobiletransaction/do.transaction.register.json",
-						new BasicNameValuePair("uid", String.valueOf(prefs.getInt("userid", 1))),
-						new BasicNameValuePair("type", dto.type.toString()), new BasicNameValuePair("money", dto.value.toString()),
-						new BasicNameValuePair("date", dto.date.toString()));
+				String json = httpReqHelper.runJsonRequest(URLConstants.DoJson.MobileTransactions.MT_REG_TR.URL, new BasicNameValuePair(
+						URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_UID, String.valueOf(prefs.getInt("userid", 1))),
+						new BasicNameValuePair(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_TYPE, dto.type.toString()),
+						new BasicNameValuePair(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_MONEY, dto.value.toString()),
+						new BasicNameValuePair(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_DATE, dto.date.toString()));
 				OperationResultDTO res = new Gson().fromJson(json, OperationResultDTO.class);
 				Logger.i("pushTransacton", "pushed: " + res.retid);
+				ContentValues cv = new ContentValues();
+				cv.put(TransactionDBEntity.SERVER_ID, res.retid);
+				int updated = cntxActivity.getContentResolver().update(TransactionDBEntity.CONTENT_URI, cv, TransactionDBEntity._ID + " = ?",
+						new String[] { dto.id.toString() });
+				Logger.i("pushTransacton", "updated : " + updated);
 			}
 			lastSyncDate = new Date().getTime();
 		} catch (Exception e)

@@ -19,7 +19,6 @@ import ru.terra.spending.core.tasks.PushTransactionsAsyncTask;
 import ru.terra.spending.core.tasks.RecvTypesAsyncTask;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
