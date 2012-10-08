@@ -36,4 +36,10 @@ public class FilterServletOutputStream extends ServletOutputStream
 		stream.write(b, off, len);
 	}
 
+	public void close() throws IOException
+	{
+		// do nothing, do not allow
+		super.close();
+	}
+
 }

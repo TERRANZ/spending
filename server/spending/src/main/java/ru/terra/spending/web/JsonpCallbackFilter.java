@@ -18,6 +18,7 @@ import org.slf4j.LoggerFactory;
 
 public class JsonpCallbackFilter implements Filter
 {
+	private static final String CALLBACK_KEYWORD = "callback";
 
 	private static Logger log = LoggerFactory.getLogger(JsonpCallbackFilter.class);
 
@@ -32,23 +33,29 @@ public class JsonpCallbackFilter implements Filter
 		@SuppressWarnings("unchecked")
 		Map<String, String[]> parms = httpRequest.getParameterMap();
 
-		if (parms.containsKey("callback"))
+		if (parms.containsKey(CALLBACK_KEYWORD))
 		{
-			log.debug("Wrapping response with JSONP callback '" + parms.get("callback")[0] + "'");
-			httpResponse.setContentType("text/javascript;charset=UTF-8");
+			String callbackFunction = parms.get(CALLBACK_KEYWORD)[0];
+			log.debug("Wrapping response with JSONP callback '" + callbackFunction + "'");
+			httpResponse.setContentType("text/javascript;charset=UTF-8;;;");
 			GenericResponseWrapper wrapper = new GenericResponseWrapper(httpResponse);
 			chain.doFilter(request, wrapper);
-
 			OutputStream out = httpResponse.getOutputStream();
-			out.write(new String(parms.get("callback")[0] + "(").getBytes());
+			out.write(callbackFunction.getBytes());
+			out.write("(".getBytes());
 			out.write(wrapper.getData());
-			// chain.doFilter(request, httpResponse);
-			out.write(new String(");").getBytes());
+			out.write(");".getBytes());
+			out.flush();
+			out.close();
+			httpResponse.setContentLength(3000 + callbackFunction.length() + wrapper.getContentLength());
+			httpResponse.setHeader("Content-Length", "" + (300 + callbackFunction.length() + wrapper.getContentLength()));
+			log.debug("JsonpCallbackFiler done");
 		}
 		else
 		{
 			chain.doFilter(request, response);
 		}
+
 	}
 
 	public void destroy()
