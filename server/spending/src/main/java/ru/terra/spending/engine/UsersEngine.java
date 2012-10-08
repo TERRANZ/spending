@@ -1,7 +1,5 @@
 package ru.terra.spending.engine;
 
-import java.util.concurrent.ExecutionException;
-
 import javax.inject.Singleton;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
@@ -15,7 +13,6 @@ import ru.terra.spending.db.entity.User;
 import ru.terra.spending.db.entity.controller.UserJpaController;
 import ru.terra.spending.db.entity.controller.exceptions.IllegalOrphanException;
 import ru.terra.spending.db.entity.controller.exceptions.NonexistentEntityException;
-import ru.terra.spending.web.security.TUserDetailService;
 
 @Singleton
 @Component

@@ -47,5 +47,5 @@ public class TransactionEngine
 			ret.add(new TransactionDTO(t));
 		}
 		return ret;
-	}	
+	}
 }

@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ru.terra.spending.constants.URLConstants;
+
 /**
  * Handles requests for the application home page.
  */
@@ -23,7 +25,7 @@ public class HomeController
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = URLConstants.Pages.HOME, method = RequestMethod.GET)
 	public String home(Locale locale, Model model)
 	{
 		logger.info("Welcome home! the client locale is " + locale.toString());
@@ -34,7 +36,7 @@ public class HomeController
 		String formattedDate = dateFormat.format(date);
 
 		model.addAttribute("serverTime", formattedDate);
-		return "home";
+		return URLConstants.Views.HOME;
 	}
 
 }

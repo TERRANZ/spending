@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ru.terra.spending.ResponceUtils;
+import ru.terra.spending.constants.URLConstants;
 import ru.terra.spending.dto.OperationResultDTO;
 import ru.terra.spending.engine.TransactionEngine;
 import ru.terra.spending.engine.TypesEngine;
@@ -25,11 +26,11 @@ public class MobileTransactionController
 	@Inject
 	private TypesEngine tte;
 
-	@RequestMapping(value = "/mobiletransaction/get.transactions.json", method = RequestMethod.GET)
+	@RequestMapping(value = URLConstants.DoJson.MobileTransactions.MT_GET_TR.URL, method = RequestMethod.GET)
 	public ResponseEntity<String> getTransactios(HttpServletRequest request)
 	{
 		String json = "";
-		String uid = request.getParameter("user");
+		String uid = request.getParameter(URLConstants.DoJson.MobileTransactions.MT_GET_TR.PARAM_USER);
 		if (uid != null)
 		{
 			Long luid = -1L;
@@ -48,23 +49,23 @@ public class MobileTransactionController
 	private ResponseEntity<String> regTransactios(HttpServletRequest request)
 	{
 		String json = "";
-		String uid = request.getParameter("uid");
-		String type = request.getParameter("type");
-		String money = request.getParameter("money");
-		String date = request.getParameter("date");
+		String uid = request.getParameter(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_UID);
+		String type = request.getParameter(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_TYPE);
+		String money = request.getParameter(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_MONEY);
+		String date = request.getParameter(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_DATE);
 		Integer id = te.registerTransaction(ue.getUser(Integer.parseInt(uid)), tte.getType(Integer.parseInt(type)), Double.parseDouble(money),
 				Long.parseLong(date));
 		json = new JSONSerializer().deepSerialize(new OperationResultDTO("ok", id));
-		return ResponceUtils.makeResponce(json);		
+		return ResponceUtils.makeResponce(json);
 	}
-	
-	@RequestMapping(value = "/mobiletransaction/do.transaction.register.json", method = RequestMethod.GET)
+
+	@RequestMapping(value = URLConstants.DoJson.MobileTransactions.MT_REG_TR.URL, method = RequestMethod.GET)
 	public ResponseEntity<String> regTransactiosGet(HttpServletRequest request)
 	{
 		return regTransactios(request);
 	}
-	
-	@RequestMapping(value = "/mobiletransaction/do.transaction.register.json", method = RequestMethod.POST)
+
+	@RequestMapping(value = URLConstants.DoJson.MobileTransactions.MT_REG_TR.URL, method = RequestMethod.POST)
 	public ResponseEntity<String> regTransactiosPost(HttpServletRequest request)
 	{
 		return regTransactios(request);

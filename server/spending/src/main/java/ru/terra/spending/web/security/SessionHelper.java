@@ -10,12 +10,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import ru.terra.spending.db.entity.User;
 
-public final class SessionHelper 
+public final class SessionHelper
 {
 	private static final Logger logger = LoggerFactory.getLogger(SessionHelper.class);
-	
+
 	/**
 	 * Проверяет, авторизован ли пользователь в указанном контексте безопасности
+	 * 
 	 * @param context Контекст безопасности
 	 * @return
 	 */
@@ -30,31 +31,33 @@ public final class SessionHelper
 			return false;
 		}
 		boolean isAnonymous = false;
-		for (GrantedAuthority authority : auth.getAuthorities()) 
-		{  
-		      String authorityName = authority.getAuthority();
-		      if (RoleConstants.ROLE_ANONYMOUS.equals(authorityName))
-		      {
-		         isAnonymous = true;
-		         break;        
-		      }
-		      
+		for (GrantedAuthority authority : auth.getAuthorities())
+		{
+			String authorityName = authority.getAuthority();
+			if (RoleConstants.ROLE_ANONYMOUS.equals(authorityName))
+			{
+				isAnonymous = true;
+				break;
+			}
+
 		}
 		return !isAnonymous;
 	}
-	
+
 	/**
 	 * Проверяет, авторизован ли текущий пользователь
+	 * 
 	 * @return
 	 */
-	public static boolean isUserCurrentAuthorized() 
+	public static boolean isUserCurrentAuthorized()
 	{
 
 		return isUserAuthorized(SecurityContextHolder.getContext());
 	}
-	
+
 	/**
 	 * Получает данные пользователя из указанного контекста безопасности
+	 * 
 	 * @param context Контекст безопасности
 	 * @return
 	 */
@@ -68,25 +71,26 @@ public final class SessionHelper
 			logger.debug("Authentication is null!");
 			return null;
 		}
-		Object principal = auth.getPrincipal(); 
+		Object principal = auth.getPrincipal();
 		User iUser = null;
-		if (principal instanceof TUserDetails) 
-			iUser = ((TUserDetails) principal).getIUser(); 
+		if (principal instanceof TUserDetails)
+			iUser = ((TUserDetails) principal).getIUser();
 		return iUser;
 	}
-	
+
 	/**
 	 * Получает данные текущего пользователя (null, если пользователь не авторизован)
+	 * 
 	 * @return
 	 */
 	public static User getCurrentIUser()
 	{
 		return getIUser(SecurityContextHolder.getContext());
 	}
-	
-	
+
 	/**
 	 * Возвращает идентификатор пользователя в указанном контексте безопасности
+	 * 
 	 * @param context Контекст безопасности
 	 * @return
 	 */
@@ -95,18 +99,20 @@ public final class SessionHelper
 		User u = getIUser(context);
 		return u == null ? null : u.getId();
 	}
-	
+
 	/**
 	 * Возвращает идентификатор текущего пользователя (null, если пользователь не авторизован)
+	 * 
 	 * @return
 	 */
 	public static Integer getCurrentIUserId()
 	{
 		return getIUserId(SecurityContextHolder.getContext());
 	}
-	
+
 	/**
 	 * Обновляет в сессии данные текущего пользователя. Метод вызывается после изменения данных в профиле.
+	 * 
 	 * @param newUserInfo Новые данные пользователя
 	 */
 	public static void refreshCurrentUserInfo(User newUserInfo)
@@ -118,44 +124,51 @@ public final class SessionHelper
 		{
 			Object principal = auth.getPrincipal();
 			if (principal instanceof TUserDetails)
-				((TUserDetails)principal).setIUser(newUserInfo);
+				((TUserDetails) principal).setIUser(newUserInfo);
 		}
 	}
-	
+
 	/**
 	 * Проверяет, является ли текущий пользователь администратором
+	 * 
 	 * @return
 	 */
-	public static boolean isAdmin() {
+	public static boolean isAdmin()
+	{
 		return false;
-//		User u = getCurrentIUser();
-//		return u != null && u.isAdmin();
+		// User u = getCurrentIUser();
+		// return u != null && u.isAdmin();
 	}
-		
-	public static void activateSession(User iuser) {
+
+	public static void activateSession(User iuser)
+	{
 		TUserDetails details = new TUserDetails();
 		details.setIUser(iuser);
 		FastAuthToken authToken = new FastAuthToken(details);
 		SecurityContextHolder.getContext().setAuthentication(authToken);
 	}
-		
+
 	@SuppressWarnings("serial")
-	private static class FastAuthToken extends AbstractAuthenticationToken {
+	private static class FastAuthToken extends AbstractAuthenticationToken
+	{
 		private TUserDetails details;
-		
-		public FastAuthToken(TUserDetails details) {
+
+		public FastAuthToken(TUserDetails details)
+		{
 			super(details.getAuthorities());
 			this.details = details;
 			setAuthenticated(true);
 		}
 
 		@Override
-		public Object getCredentials() {
+		public Object getCredentials()
+		{
 			return null;
 		}
 
 		@Override
-		public Object getPrincipal() {
+		public Object getPrincipal()
+		{
 			return details;
 		}
 	}

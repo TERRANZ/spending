@@ -25,8 +25,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import ru.terra.spending.HomeController;
 import ru.terra.spending.ResponceUtils;
+import ru.terra.spending.constants.URLConstants;
 import ru.terra.spending.db.entity.User;
 import ru.terra.spending.dto.LoginDTO;
 import ru.terra.spending.engine.UsersEngine;
@@ -67,14 +67,14 @@ public class LoginController
 		return data;
 	}
 
-	@RequestMapping(value = "/login/do.login.json", method = RequestMethod.POST)
+	@RequestMapping(value = URLConstants.DoJson.LOGIN_DO_LOGIN_JSON, method = RequestMethod.POST)
 	public ResponseEntity<String> mobileLoginPost(HttpServletRequest request, @RequestParam(required = true, defaultValue = "") String user,
 			@RequestParam(required = true, defaultValue = "") String pass)
 	{
 		return mobileLogin(request, user, pass);
 	}
 
-	@RequestMapping(value = "/login/do.login.json", method = RequestMethod.GET)
+	@RequestMapping(value = URLConstants.DoJson.LOGIN_DO_LOGIN_JSON, method = RequestMethod.GET)
 	public ResponseEntity<String> mobileLoginGet(HttpServletRequest request, @RequestParam(required = true, defaultValue = "") String user,
 			@RequestParam(required = true, defaultValue = "") String pass)
 	{
@@ -89,7 +89,8 @@ public class LoginController
 		{
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("Content-Type", "application/json; charset=utf-8");
-			final String address = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/spending/do.login";
+			final String address = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+					+ URLConstants.Pages.SPRING_LOGIN;
 			URL url = new URL(address);
 			HttpURLConnection conn = prepareConnection(url);
 			conn.connect();
@@ -135,7 +136,7 @@ public class LoginController
 				// user valid!
 				// code 200
 				logger.info("cookie = " + cookie);
-				ret.session = cookie.length() > 0 ? cookie.substring(cookie.indexOf("JSESSIONID="), cookie.indexOf(";")) : "";
+				ret.session = cookie.length() > 0 ? cookie.substring(cookie.indexOf("JSESSIONID=") + 11, cookie.indexOf(";")) : "";
 				ret.logged = true;
 			}
 			try
@@ -144,7 +145,7 @@ public class LoginController
 				String line;
 				while ((line = rd.readLine()) != null)
 				{
-					//logger.info("HTTP POST respone: " + line);
+					// logger.info("HTTP POST respone: " + line);
 				}
 				wr.close();
 				rd.close();
@@ -162,7 +163,7 @@ public class LoginController
 		return ResponceUtils.makeResponce(json);
 	}
 
-	@RequestMapping(value = "/login/do.register.json", method = RequestMethod.POST)
+	@RequestMapping(value = URLConstants.DoJson.LOGIN_DO_LOGIN_JSON, method = RequestMethod.POST)
 	public ResponseEntity<String> register(HttpServletRequest request)
 	{
 		LoginDTO ret = new LoginDTO();
@@ -193,9 +194,9 @@ public class LoginController
 		return ResponceUtils.makeResponce(json);
 	}
 
-	@RequestMapping(value = "login", method = RequestMethod.GET)
+	@RequestMapping(value = URLConstants.Pages.LOGIN, method = RequestMethod.GET)
 	public String login(Locale locale, Model model)
 	{
-		return "login";
+		return URLConstants.Views.LOGIN;
 	}
 }

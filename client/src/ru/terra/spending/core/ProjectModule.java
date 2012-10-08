@@ -33,14 +33,7 @@ public class ProjectModule extends AbstractModule
 	{
 		return "http://192.168.1.1:8080/";
 	}
-
-	@Provides
-	@Named("jsonServerPort")
-	public int provideJsonServerPort()
-	{
-		return 80;
-	}
-
+	
 	@Provides
 	@Named("dateFormat")
 	@Singleton
