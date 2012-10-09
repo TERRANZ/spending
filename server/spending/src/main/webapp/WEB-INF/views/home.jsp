@@ -13,8 +13,8 @@
 		if (SessionHelper.getCurrentIUser() == null)
 		{
 	%>
-	<a href="/spending/login">Вход</a>
-	<a href="/spending/registration">Вход</a>
+	<a href="/spending/login">Вход</a><p>
+	<a href="/spending/registration">регистрация</a>
 	<%
 		}
 		else
