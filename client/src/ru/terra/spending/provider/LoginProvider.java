@@ -30,6 +30,7 @@ public class LoginProvider extends JsonAbstractProvider
 		if (dto.logged)
 		{
 			SettingsUtil.saveSetting(cntxActivity, Constants.CONFIG_SESSION, dto.session);
+			Logger.i("login", dto.session);
 			json = httpReqHelper.runSimpleJsonRequest(URLConstants.DoJson.LOGIN_DO_GET_MY_ID);
 			dto = new Gson().fromJson(json, LoginDTO.class);
 			SettingsUtil.saveSetting(cntxActivity, Constants.CONFIG_UID, dto.id.toString());

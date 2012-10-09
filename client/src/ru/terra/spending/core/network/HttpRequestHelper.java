@@ -46,7 +46,7 @@ public class HttpRequestHelper
 		hc.getParams().setParameter("http.protocol.content-charset", "UTF-8");
 	}
 
-	public String runSimpleJsonRequest(String uri) 
+	public String runSimpleJsonRequest(String uri)
 	{
 		HttpGet httpGet = new HttpGet(baseAddress + uri);
 		return runRequest(httpGet);
@@ -57,7 +57,8 @@ public class HttpRequestHelper
 		StringBuilder builder = new StringBuilder();
 		try
 		{
-			httpRequest.setHeader("Cookie", SettingsUtil.getSetting(cntx, Constants.CONFIG_SESSION, ""));
+			httpRequest.setHeader("Cookie", "JSESSIONID=" + SettingsUtil.getSetting(cntx, Constants.CONFIG_SESSION, ""));
+			Logger.i("runRequest", "header: " + httpRequest.getHeaders("Cookie"));
 			HttpResponse response = null;
 			try
 			{
