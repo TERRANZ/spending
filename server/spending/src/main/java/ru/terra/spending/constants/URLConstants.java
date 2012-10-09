@@ -8,6 +8,7 @@ public class URLConstants
 		public static final String LOGIN = "login";
 		public static final String TRANSACTIONS = "transactions";
 		public static final String HOME = "/";
+		public static final String REGISTER = "register";
 	}
 
 	public class DoJson
@@ -42,5 +43,6 @@ public class URLConstants
 		public static final String LOGIN = "login";
 		public static final String TRANSACTIONS = "transactions";
 		public static final String HOME = "home";
+		public static final String REGISTER = "reg";
 	}
 }

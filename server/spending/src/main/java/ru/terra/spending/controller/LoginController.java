@@ -200,6 +200,13 @@ public class LoginController
 	{
 		return URLConstants.Views.LOGIN;
 	}
+	
+	@RequestMapping(value = URLConstants.Pages.REGISTER, method = RequestMethod.GET)
+	public String register(Locale locale, Model model)
+	{
+		return URLConstants.Views.REGISTER;
+	}
+	
 
 	@RequestMapping(value = URLConstants.DoJson.LOGIN_DO_GET_MY_ID, method = RequestMethod.GET)
 	public ResponseEntity<String> getMyId(HttpServletRequest request)
