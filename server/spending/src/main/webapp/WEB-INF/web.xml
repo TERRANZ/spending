@@ -50,6 +50,11 @@
 	<listener>
 		<listener-class>ru.terra.spending.web.SessionListener</listener-class>
 	</listener>
+	<listener>
+    <listener-class>
+      org.springframework.security.web.session.HttpSessionEventPublisher
+    </listener-class>
+  </listener>
 	
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>

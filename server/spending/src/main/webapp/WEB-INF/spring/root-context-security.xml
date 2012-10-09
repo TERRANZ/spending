@@ -15,7 +15,8 @@
 		<intercept-url pattern="/static/**" access="permitAll" />
 		<intercept-url pattern="/**" access="permitAll" />
 
-
+		<session-management
+			session-authentication-strategy-ref="sas" />
 		<custom-filter ref="lowerCaseUsernamePasswordAuthenticationFilter"
 			position="FORM_LOGIN_FILTER" />
 

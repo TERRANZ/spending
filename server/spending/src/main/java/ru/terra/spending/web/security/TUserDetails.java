@@ -3,6 +3,8 @@ package ru.terra.spending.web.security;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -12,11 +14,15 @@ public class TUserDetails implements UserDetails
 {
 	private static final long serialVersionUID = -7717808998423068908L;
 	private User user;
-
+	
+	private static final Logger logger = LoggerFactory.getLogger(TUserDetails.class);
+	
 	private Collection<GrantedAuthority> grantedAuthority;
 
 	public void setIUser(User tuser)
 	{
+
+		logger.info("setIUser");		
 		this.user = tuser;
 		grantedAuthority = new ArrayList<GrantedAuthority>();
 		grantedAuthority.add(RoleConstants.GA_USER);

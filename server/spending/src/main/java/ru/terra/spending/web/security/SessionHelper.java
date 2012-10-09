@@ -27,16 +27,18 @@ public final class SessionHelper
 		Authentication auth = context.getAuthentication();
 		if (auth == null)
 		{
-			logger.debug("Authentication is null!");
+			logger.info("Authentication is null!");
 			return false;
 		}
 		boolean isAnonymous = false;
 		for (GrantedAuthority authority : auth.getAuthorities())
 		{
 			String authorityName = authority.getAuthority();
+			logger.info("authorityName = " + authorityName);
 			if (RoleConstants.ROLE_ANONYMOUS.equals(authorityName))
 			{
 				isAnonymous = true;
+				logger.info("isAnonymous = true");
 				break;
 			}
 
@@ -63,12 +65,17 @@ public final class SessionHelper
 	 */
 	public static User getIUser(SecurityContext context)
 	{
+		logger.info("getIUser");
 		if (context == null || !isUserAuthorized(context))
+		{
+			logger.info(context == null ? "context == null" : "context is not null");
+			logger.info(!isUserAuthorized(context) ? "!isUserAuthorized(context)" : "isUserAuthorized(context)");
 			return null;
+		}
 		Authentication auth = context.getAuthentication();
 		if (auth == null)
 		{
-			logger.debug("Authentication is null!");
+			logger.info("Authentication is null!");
 			return null;
 		}
 		Object principal = auth.getPrincipal();

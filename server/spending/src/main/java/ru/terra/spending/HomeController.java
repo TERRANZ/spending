@@ -29,7 +29,6 @@ public class HomeController
 	public String home(Locale locale, Model model)
 	{
 		logger.info("Welcome home! the client locale is " + locale.toString());
-
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 

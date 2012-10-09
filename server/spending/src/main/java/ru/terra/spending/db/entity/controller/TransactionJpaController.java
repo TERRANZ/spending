@@ -192,7 +192,7 @@ public class TransactionJpaController implements Serializable
 		return findTransactionEntities(false, maxResults, firstResult);
 	}
 
-	public List<Transaction> findTransactionEntities(Long user)
+	public List<Transaction> findTransactionEntities(User user)
 	{
 		EntityManager em = getEntityManager();
 		try

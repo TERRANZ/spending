@@ -21,9 +21,13 @@
 	<beans:bean class="ru.terra.spending.web.JsonpCallbackFilter"
 		id="jsonpCallbackFilter" />
 
+	<beans:bean id="sas"
+		class="org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy" />
+
 	<bean id="lowerCaseUsernamePasswordAuthenticationFilter"
 		class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
 		<property name="filterProcessesUrl" value="/do.login" />
+		<property name="sessionAuthenticationStrategy" ref="sas" />
 		<property name="authenticationManager" ref="authenticationManager" />
 	</bean>
 

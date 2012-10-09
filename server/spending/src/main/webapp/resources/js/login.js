@@ -16,7 +16,7 @@ function userLogin(user, pass) {
 						pass : pass
 					},
 					success : function(data) {
-						if (data.logged == 'true') {
+						if (data.logged == true) {
 							window.location.reload();
 						} else {
 							if (parseInt(data.errorCode) == 1000) {

@@ -33,10 +33,10 @@ public class MobileTransactionController
 		String uid = request.getParameter(URLConstants.DoJson.MobileTransactions.MT_GET_TR.PARAM_USER);
 		if (uid != null)
 		{
-			Long luid = -1L;
+			Integer luid = -1;
 			try
 			{
-				luid = Long.parseLong(uid);
+				luid = Integer.parseInt(uid);
 			} catch (NumberFormatException e)
 			{
 				// error
