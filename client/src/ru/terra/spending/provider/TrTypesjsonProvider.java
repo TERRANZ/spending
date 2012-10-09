@@ -41,7 +41,7 @@ public class TrTypesjsonProvider extends JsonAbstractProvider
 			}
 		} catch (Exception e)
 		{
-			
+
 		}
 	}
 }

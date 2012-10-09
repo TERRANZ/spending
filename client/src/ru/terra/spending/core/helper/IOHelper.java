@@ -1,4 +1,4 @@
-package ru.terra.spending.core;
+package ru.terra.spending.core.helper;
 
 import java.io.BufferedReader;
 import java.io.IOException;

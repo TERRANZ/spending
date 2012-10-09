@@ -1,4 +1,4 @@
-package ru.terra.spending.core;
+package ru.terra.spending.core.constants;
 
 public interface Constants
 {

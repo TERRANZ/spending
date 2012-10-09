@@ -1,4 +1,4 @@
-package ru.terra.spending.core;
+package ru.terra.spending.util;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ public class TimeUtil
 	{
 		String time = "";
 		try
-		{			
+		{
 			Date currentDate = new Date();
 			long diffInSeconds = (currentDate.getTime() - epoch) / 1000;
 			String elapsed = "";

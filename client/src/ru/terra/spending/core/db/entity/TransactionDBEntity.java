@@ -1,6 +1,6 @@
 package ru.terra.spending.core.db.entity;
 
-import ru.terra.spending.core.Constants;
+import ru.terra.spending.core.constants.Constants;
 import android.net.Uri;
 import android.provider.BaseColumns;
 

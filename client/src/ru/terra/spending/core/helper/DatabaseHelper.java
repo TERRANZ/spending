@@ -1,4 +1,4 @@
-package ru.terra.spending.core;
+package ru.terra.spending.core.helper;
 
 import ru.terra.spending.core.db.ProjectDbOpenHelper;
 import android.database.Cursor;

@@ -8,4 +8,5 @@
             <item android:id="@+id/mi_main_send_transactions" android:title="Выгрузить траты"/>            
         </menu>
     </item>
+ <item android:id="@+id/mi_login" android:title="Вход"></item>
 </menu>

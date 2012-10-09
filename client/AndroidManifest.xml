@@ -25,6 +25,7 @@
             android:name=".core.db.ProjectContentProvider"
             android:authorities="ru.terra.spending.entity" >
         </provider>
+        <activity android:name=".activity.LoginActivity"></activity>
     </application>
 
 </manifest>

@@ -33,7 +33,7 @@ public class ProjectModule extends AbstractModule
 	{
 		return "http://192.168.1.1:8080/";
 	}
-	
+
 	@Provides
 	@Named("dateFormat")
 	@Singleton

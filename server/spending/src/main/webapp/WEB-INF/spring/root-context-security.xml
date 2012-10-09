@@ -7,7 +7,7 @@
 	<!-- HTTP security configurations -->
 	<sec:http auto-config="false" use-expressions="true"
 		entry-point-ref="http403EntryPoint">
-		<logout logout-success-url="/" logout-url="/spending/do.logout" />
+		<logout logout-success-url="/" logout-url="/do.logout" />
 
 		<!-- Configure these elements to secure URIs in your application -->
 		<intercept-url pattern="/userprofile/**" access="permitAll" />

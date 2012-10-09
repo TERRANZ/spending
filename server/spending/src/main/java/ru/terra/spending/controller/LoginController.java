@@ -30,6 +30,7 @@ import ru.terra.spending.constants.URLConstants;
 import ru.terra.spending.db.entity.User;
 import ru.terra.spending.dto.LoginDTO;
 import ru.terra.spending.engine.UsersEngine;
+import ru.terra.spending.web.security.SessionHelper;
 import flexjson.JSONSerializer;
 
 @Controller
@@ -50,7 +51,7 @@ public class LoginController
 		conn.setDoOutput(true);
 		conn.setConnectTimeout(Integer.MAX_VALUE);
 		conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
-		conn.setRequestProperty("Referer", "http://localhost:8080/spending/login");
+		// conn.setRequestProperty("Referer", "http://localhost/spending/login");
 		conn.setRequestProperty("Accept",
 				"text/html, application/xml;q=0.9, application/xhtml+xml, image/png, image/webp, image/jpeg, image/gif, image/x-xbitmap, */*;q=0.1");
 		conn.setRequestProperty("Accept-Language", "ru-RU,ru;q=0.9,en;q=0.8");
@@ -199,4 +200,18 @@ public class LoginController
 	{
 		return URLConstants.Views.LOGIN;
 	}
+
+	@RequestMapping(value = URLConstants.DoJson.LOGIN_DO_GET_MY_ID, method = RequestMethod.GET)
+	public ResponseEntity<String> getMyId(HttpServletRequest request)
+	{
+		LoginDTO ret = new LoginDTO();
+		User u = SessionHelper.getCurrentIUser();
+		if (u != null)
+		{
+			ret.id = u.getId();
+		}
+		String json = new JSONSerializer().serialize(ret);
+		return ResponceUtils.makeResponce(json);
+	}
+
 }

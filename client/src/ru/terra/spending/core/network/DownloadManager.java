@@ -9,6 +9,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import ru.terra.spending.R;
+import ru.terra.spending.core.constants.ActivityConstants;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -101,7 +102,7 @@ public class DownloadManager
 			progressDialog.dismiss();
 			if (wis != null)
 			{
-				wis.workIsDone(String.valueOf(ActivityConstants.DOWNLOAD_FINISHED));
+				wis.workIsDone(ActivityConstants.DOWNLOAD_FINISHED);
 			}
 		}
 

@@ -1,4 +1,4 @@
-package ru.terra.spending.core;
+package ru.terra.spending.core.helper;
 
 import java.util.Calendar;
 import java.util.Date;

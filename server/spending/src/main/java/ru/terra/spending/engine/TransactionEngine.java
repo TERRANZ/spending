@@ -37,12 +37,12 @@ public class TransactionEngine
 		tjcp = new TransactionJpaController(emf);
 	}
 
-	public Integer registerTransaction(User userId, TrType type, Double money, Long date)
+	public Integer registerTransaction(User user, TrType type, Double money, Long date)
 	{
 		Transaction tr = new Transaction();
 		tr.setTrDate(new Date(date));
 		tr.setTypeId(type);
-		tr.setUserId(userId);
+		tr.setUserId(user);
 		tr.setValue(money);
 		tjcp.create(tr);
 		return tr.getId();

@@ -11,16 +11,18 @@ import roboguice.activity.RoboActivity;
 import ru.terra.spending.R;
 import ru.terra.spending.activity.components.TransactionsListCursorAdapter;
 import ru.terra.spending.activity.components.TypesSpinnerAdapter;
-import ru.terra.spending.core.DateHelper;
 import ru.terra.spending.core.ProjectModule;
+import ru.terra.spending.core.constants.ActivityConstants;
 import ru.terra.spending.core.db.entity.TransactionDBEntity;
 import ru.terra.spending.core.db.entity.TypeDBEntity;
+import ru.terra.spending.core.helper.DateHelper;
 import ru.terra.spending.core.tasks.PushTransactionsAsyncTask;
 import ru.terra.spending.core.tasks.RecvTypesAsyncTask;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
@@ -252,8 +254,25 @@ public class MainActivity extends RoboActivity
 			Toast.makeText(this, "Синхронизируем траты", Toast.LENGTH_SHORT).show();
 			return true;
 		}
+		case R.id.mi_login:
+		{
+			startActivityForResult(new Intent(this, LoginActivity.class), ActivityConstants.LOGIN);
+		}
 		default:
 			return false;
 		}
 	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if (RESULT_OK == resultCode)
+		{
+			if (ActivityConstants.LOGIN == requestCode)
+			{
+				Toast.makeText(this, "Вход успешен", Toast.LENGTH_SHORT).show();
+			}
+		}
+	}
+
 }

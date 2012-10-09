@@ -1,9 +1,9 @@
 package ru.terra.spending.activity.components;
 
 import ru.terra.spending.R;
-import ru.terra.spending.core.TimeUtil;
 import ru.terra.spending.core.db.entity.TransactionDBEntity;
 import ru.terra.spending.core.db.entity.TypeDBEntity;
+import ru.terra.spending.util.TimeUtil;
 import android.content.Context;
 import android.database.Cursor;
 import android.support.v4.widget.CursorAdapter;

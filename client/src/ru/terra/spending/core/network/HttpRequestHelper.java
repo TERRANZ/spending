@@ -21,7 +21,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import ru.terra.spending.R;
-import ru.terra.spending.core.Constants;
+import ru.terra.spending.core.constants.Constants;
 import ru.terra.spending.util.Logger;
 import ru.terra.spending.util.SettingsUtil;
 import android.app.Activity;
@@ -46,7 +46,7 @@ public class HttpRequestHelper
 		hc.getParams().setParameter("http.protocol.content-charset", "UTF-8");
 	}
 
-	public String runSimpleJsonRequest(String uri) throws UnableToLoginException
+	public String runSimpleJsonRequest(String uri) 
 	{
 		HttpGet httpGet = new HttpGet(baseAddress + uri);
 		return runRequest(httpGet);

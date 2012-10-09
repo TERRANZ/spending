@@ -3,6 +3,8 @@ package ru.terra.spending.controller;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import ru.terra.spending.ResponceUtils;
 import ru.terra.spending.constants.URLConstants;
+import ru.terra.spending.db.entity.User;
 import ru.terra.spending.dto.OperationResultDTO;
 import ru.terra.spending.engine.TransactionEngine;
 import ru.terra.spending.engine.TypesEngine;
@@ -25,6 +28,8 @@ public class MobileTransactionController
 	private UsersEngine ue;
 	@Inject
 	private TypesEngine tte;
+
+	private static final Logger logger = LoggerFactory.getLogger(MobileTransactionController.class);
 
 	@RequestMapping(value = URLConstants.DoJson.MobileTransactions.MT_GET_TR.URL, method = RequestMethod.GET)
 	public ResponseEntity<String> getTransactios(HttpServletRequest request)
@@ -53,8 +58,14 @@ public class MobileTransactionController
 		String type = request.getParameter(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_TYPE);
 		String money = request.getParameter(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_MONEY);
 		String date = request.getParameter(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_DATE);
-		Integer id = te.registerTransaction(ue.getUser(Integer.parseInt(uid)), tte.getType(Integer.parseInt(type)), Double.parseDouble(money),
-				Long.parseLong(date));
+		logger.info("uid = " + uid);
+		logger.info("type = " + type);
+		logger.info("money = " + money);
+		logger.info("date = " + date);
+		User u = ue.getUser(Integer.parseInt(uid));
+		logger.info(u.toString());
+		Integer id = te.registerTransaction(u, tte.getType(Integer.parseInt(type)), Double.parseDouble(money), Long.parseLong(date));
+		logger.info("registered: " + id);
 		json = new JSONSerializer().deepSerialize(new OperationResultDTO("ok", id));
 		return ResponceUtils.makeResponce(json);
 	}

@@ -1,6 +1,5 @@
 package ru.terra.spending.core.network;
 
-
 import android.app.Activity;
 
 public abstract class JsonAbstractProvider

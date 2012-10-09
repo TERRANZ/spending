@@ -14,6 +14,7 @@ public class URLConstants
 	{
 		public static final String LOGIN_DO_LOGIN_JSON = "/login/do.login.json";
 		public static final String LOGIN_DO_REGISTER_JSON = "/login/do.register.json";
+		public static final String LOGIN_DO_GET_MY_ID = "/login/do.getmyid.json";
 
 		public class MobileTransactions
 		{

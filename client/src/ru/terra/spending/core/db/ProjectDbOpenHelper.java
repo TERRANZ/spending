@@ -2,8 +2,8 @@ package ru.terra.spending.core.db;
 
 import roboguice.inject.ContextSingleton;
 import ru.terra.spending.R;
-import ru.terra.spending.core.Constants;
-import ru.terra.spending.core.IOHelper;
+import ru.terra.spending.core.constants.Constants;
+import ru.terra.spending.core.helper.IOHelper;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -47,13 +47,13 @@ public class ProjectDbOpenHelper extends SQLiteOpenHelper
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
 	{
-//		if (newVersion > oldVersion)
-//		{
-//			int stages = newVersion - oldVersion;
-//			String sql = IOHelper.readResourceAsString(context, getResourceId(oldVersion, newVersion);
-//			String[] strings = sql.split(";");
-//			executeStatements(strings, db);
-//		}
+		// if (newVersion > oldVersion)
+		// {
+		// int stages = newVersion - oldVersion;
+		// String sql = IOHelper.readResourceAsString(context, getResourceId(oldVersion, newVersion);
+		// String[] strings = sql.split(";");
+		// executeStatements(strings, db);
+		// }
 	}
 
 	private void executeStatements(String[] strings, SQLiteDatabase db)
