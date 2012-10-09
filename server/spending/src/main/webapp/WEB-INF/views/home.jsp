@@ -14,6 +14,7 @@
 		{
 	%>
 	<a href="/spending/login">Вход</a>
+	<a href="/spending/registration">Вход</a>
 	<%
 		}
 		else
