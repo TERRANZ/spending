@@ -33,4 +33,15 @@ public class TransactionsController
 		return URLConstants.Views.TRANSACTIONS;
 	}
 
+	@RequestMapping(value = URLConstants.Pages.TRANSACTIONS_ADD, method = RequestMethod.GET)
+	public String transactionsAdd(Locale locale, Model model)
+	{
+		return URLConstants.Views.TRANSACTIONS_ADD;
+	}
+	
+	@RequestMapping(value = URLConstants.Pages.TRANSACTIONS_VIEW, method = RequestMethod.GET)
+	public String transactionsView(Locale locale, Model model)
+	{
+		return URLConstants.Views.TRANSACTIONS_VIEW;
+	}
 }

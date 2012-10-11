@@ -1,3 +1,5 @@
+<%@page import="ru.terra.spending.engine.TypesEngine"%>
+<%@page import="java.util.Date"%>
 <%@page import="ru.terra.spending.dto.TransactionDTO"%>
 <%@page import="ru.terra.spending.db.entity.Transaction"%>
 <%@page import="java.util.List"%>
@@ -13,25 +15,33 @@
 <script type="text/javascript" src="resources/js/a.js"></script>
 <body>
 	<%
+		TypesEngine tse = new TypesEngine();
 		if (SessionHelper.getCurrentIUser() != null)
 		{
 			TransactionEngine te = new TransactionEngine();
 			List<TransactionDTO> transactions = te.getTransactions(SessionHelper.getCurrentIUserId());
+			if (transactions.size() == 0)
+			{
+				%><p> нет транзакций</p><%
+			}else
+			{
 	%>
 	<table>
 	<%
 			for (TransactionDTO t : transactions)
 			{
+				String date = new Date(t.date).toString();
+				String type = tse.getType(t.type).getName();
 				%>
 					<tr>
 					<td>
 					<%=t.id %>
 					</td>
 					<td>
-					<%=t.date %>
+					<%=date %>
 					</td>
 					<td>
-					<%=t.type %>
+					<%=type %>
 					</td>
 					<td>
 					<%=t.value %>
@@ -39,8 +49,10 @@
 					</tr>				
 				<%
 			}
+			}
 	%>
 	</table>
+	<a href="/spending/transactions/add">Добавить</a>
 	<%
 		}
 		else

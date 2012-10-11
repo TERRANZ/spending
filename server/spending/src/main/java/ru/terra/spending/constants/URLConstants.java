@@ -7,6 +7,8 @@ public class URLConstants
 		public static final String SPRING_LOGIN = "/spending/do.login";
 		public static final String LOGIN = "login";
 		public static final String TRANSACTIONS = "transactions";
+		public static final String TRANSACTIONS_ADD = "transactions/add";
+		public static final String TRANSACTIONS_VIEW = "transactions/view";
 		public static final String HOME = "/";
 		public static final String REGISTER = "registration";
 	}
@@ -42,6 +44,8 @@ public class URLConstants
 	{
 		public static final String LOGIN = "login";
 		public static final String TRANSACTIONS = "transactions";
+		public static final String TRANSACTIONS_ADD = "transactions_add";
+		public static final String TRANSACTIONS_VIEW = "transactions_view";
 		public static final String HOME = "home";
 		public static final String REGISTER = "reg";
 	}

@@ -21,6 +21,7 @@
 		{
 	%>
 	<p>вход успешен</p>
+	<a href="/spending/transactions">транзакции</a>
 	<%
 		}
 	%>
