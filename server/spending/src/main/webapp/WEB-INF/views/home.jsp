@@ -4,6 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<<<<<<< HEAD
 <%@include file="/WEB-INF/jsp/header.jsp"%>
 
 <!-- B.2 MAIN CONTENT -->
@@ -35,3 +36,24 @@
 </div>
 
 <%@include file="/WEB-INF/jsp/footer.jsp"%>
+=======
+	<P>The time on the server is ${serverTime}.</P>
+	<%
+		if (SessionHelper.getCurrentIUser() == null)
+		{
+	%>
+	<a href="/spending/login">Вход</a><p>
+	<a href="/spending/registration">регистрация</a>
+	<%
+		}
+		else
+		{
+	%>
+	<p>вход успешен</p>
+	<a href="/spending/transactions">транзакции</a>
+	<%
+		}
+	%>
+</body>
+</html>
+>>>>>>> 7c10acd0d3f55b5bf1406ccc0ee034bf9c643876
