@@ -1,18 +1,15 @@
 package ru.terra.spending.core.network.dto;
 
-public class OperationResultDTO
-{
-	public String message = "";
-	public Integer retid = 0;
+public class OperationResultDTO {
+    public String message = "";
+    public Integer retid = 0;
 
-	public OperationResultDTO()
-	{
-	}
+    public OperationResultDTO() {
+    }
 
-	public OperationResultDTO(String message, Integer retid)
-	{
-		super();
-		this.message = message;
-		this.retid = retid;
-	}
+    public OperationResultDTO(String message, Integer retid) {
+        super();
+        this.message = message;
+        this.retid = retid;
+    }
 }

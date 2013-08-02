@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<script src="http://icity.ru/resources/jquery/jquery-1.7.1.min.js"></script>
+<script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
 <script src="resources/js/jquery/date.js"></script>
 <script src="resources/js/jquery/jquery.autoheight.js"></script>
 <script src="resources/js/jquery/jquery.fancybox-1.3.4.pack.js "></script>

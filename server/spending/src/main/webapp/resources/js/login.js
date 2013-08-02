@@ -46,7 +46,7 @@ function register(user, pass) {
 				},
 				success : function(data) {
 					if (data.logged == true) {
-						login(user, pass);
+						userLogin(user, pass);
 					} else {
 						if (parseInt(data.errorCode) == 1000) {
 							alert('Вы сделали слишком много попыток зайти на ресурс. Аккаунт временно заблокирован. Попробуйте еще раз через некоторое время.');

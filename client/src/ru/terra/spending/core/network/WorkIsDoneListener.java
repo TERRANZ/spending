@@ -1,7 +1,6 @@
 package ru.terra.spending.core.network;
 
-public interface WorkIsDoneListener
-{
+public interface WorkIsDoneListener {
 
-	void workIsDone(int action, String... val);
+    void workIsDone(int action, String... val);
 }

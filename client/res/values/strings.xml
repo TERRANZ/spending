@@ -3,7 +3,7 @@
     <string name="pull_to_refresh_pull_label">Потяните для обновления</string>
     <string name="pull_to_refresh_release_label">Отпустите для обновления</string>
     <string name="pull_to_refresh_refreshing_label">Обновляем…</string>
-    <string name="cache_dir">spending_cache</string>    
+    <string name="cache_dir">spending_cache</string>
     <string name="server_address">http://terranout.ath.cx/spending</string>
     <string name="login_form_uname">Имя пользователя</string>
     <string name="login_form_password">Пароль</string>

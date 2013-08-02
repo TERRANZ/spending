@@ -1,17 +1,20 @@
+<%@page import="ru.terra.spending.web.security.SessionHelper"%>
+<%@page import="ru.terra.spending.constants.URLConstants"%>
+<%@page import="org.slf4j.LoggerFactory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Вход</title>
-<%@ include file="/WEB-INF/jsp/jsinclude.jsp"%>
+<%@include file="/WEB-INF/jsp/header.jsp"%>
+
+<!-- B.2 MAIN CONTENT -->
+<div class="main-content">
 <script src="resources/js/login.js"></script>
-</head>
-<body>
-	<div align="center">
-		<form action="/spending/do.login" method="post">
+	<!-- Pagetitle -->
+	<h1 class="pagetitle">Вход</h1>
+	<div>
+		<!-- Content unit - One column -->
+		<div class="column1-unit">
+					<form action="/spending/do.login" method="post">
 			<label for="j_username">Логин</label> <input type="text"
 				name="j_username" id="j_username" /> <br /> <label
 				for="j_password">Пароль</label> <input type="password"
@@ -19,7 +22,9 @@
 				name='_spring_security_remember_me' /> Remember me on this
 			computer. <br /> <input type="submit" value="Войти" />
 		</form>
+		</div>
+		<hr class="clear-contentunit" />
 	</div>
-	<a href="/spending">главная</a>
-</body>
-</html>
+</div>
+
+<%@include file="/WEB-INF/jsp/footer.jsp"%>
