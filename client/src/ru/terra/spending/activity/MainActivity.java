@@ -109,14 +109,13 @@ public class MainActivity extends RoboActivity {
         }
 
         public void onTimeSet(TimePicker timePicker, int hours, int minutes) {
-            Date currDate = new Date((Long) textView.getTag());
             Calendar calendar = Calendar.getInstance();
-            calendar.setTime(currDate);
+            calendar.setTime(new Date((Long) textView.getTag()));
             calendar.set(Calendar.HOUR_OF_DAY, hours);
             calendar.set(Calendar.MINUTE, minutes);
             String time = tf.format(calendar.getTime());
             textView.setText(time);
-            textView.setTag(currDate.getTime());
+            textView.setTag(calendar.getTime().getTime());
             if (onTimeSetListener != null) {
                 onTimeSetListener.onTimeSet(timePicker, hours, minutes);
             }
