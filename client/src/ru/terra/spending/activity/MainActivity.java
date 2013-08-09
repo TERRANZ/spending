@@ -47,6 +47,8 @@ public class MainActivity extends RoboActivity {
     private ProjectModule pm;
     private DateFormat tf;
     private Long selectedItemId;
+    private TextView tvDay;
+    private TextView tvMonth;
 
 
     private ActionMode.Callback mActionModeCallback = new ActionMode.Callback() {
@@ -233,6 +235,9 @@ public class MainActivity extends RoboActivity {
                 dialog.show();
             }
         });
+        tvDay = (TextView) report.findViewById(R.id.tvDay);
+        tvMonth = (TextView) report.findViewById(R.id.tvMonth);
+        updateReport();
     }
 
     private void firstStart() {
@@ -248,6 +253,7 @@ public class MainActivity extends RoboActivity {
         cv.put(TransactionDBEntity.TYPE, stype);
         getContentResolver().insert(TransactionDBEntity.CONTENT_URI, cv);
         etMoney.getText().clear();
+        updateReport();
     }
 
     @Override
@@ -287,4 +293,45 @@ public class MainActivity extends RoboActivity {
         }
     }
 
+    private void updateReport() {
+        updateDay();
+        updateMonth();
+    }
+
+    private void updateDay() {
+        Float spentDay = 0f;
+        Calendar currCalendar = Calendar.getInstance();
+        currCalendar.setTime(new Date());
+        Calendar minDate = Calendar.getInstance();
+        minDate.set(currCalendar.get(Calendar.YEAR), currCalendar.get(Calendar.MONTH), currCalendar.get(Calendar.DAY_OF_MONTH), 0, 0);
+        Calendar maxDate = Calendar.getInstance();
+        maxDate.set(currCalendar.get(Calendar.YEAR), currCalendar.get(Calendar.MONTH), currCalendar.get(Calendar.DAY_OF_MONTH), 23, 59);
+        Cursor cByDate = getContentResolver().query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.DATE + " >= ? OR " + TransactionDBEntity.DATE + " <= ?",
+                new String[]{minDate.getTime().toString(), maxDate.getTime().toString()}, null);
+
+        if (cByDate.moveToFirst()) {
+            spentDay += Float.parseFloat(cByDate.getString(cByDate.getColumnIndex(TransactionDBEntity.MONEY)));
+            while (cByDate.moveToNext())
+                spentDay += Float.parseFloat(cByDate.getString(cByDate.getColumnIndex(TransactionDBEntity.MONEY)));
+        }
+        tvDay.setText(spentDay.toString());
+    }
+
+    private void updateMonth() {
+        Float spentMonth = 0f;
+        Calendar currCalendar = Calendar.getInstance();
+        currCalendar.setTime(new Date());
+        Calendar minDate = Calendar.getInstance();
+        minDate.set(currCalendar.get(Calendar.YEAR), currCalendar.get(Calendar.MONTH), 1, 0, 0);
+        Calendar maxDate = Calendar.getInstance();
+        maxDate.set(currCalendar.get(Calendar.YEAR), currCalendar.get(Calendar.MONTH), currCalendar.getActualMaximum(Calendar.DAY_OF_MONTH), 23, 59);
+        Cursor cByDate = getContentResolver().query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.DATE + " >= ? OR " + TransactionDBEntity.DATE + " <= ?",
+                new String[]{minDate.getTime().toString(), maxDate.getTime().toString()}, null);
+        if (cByDate.moveToFirst()) {
+            spentMonth += Float.parseFloat(cByDate.getString(cByDate.getColumnIndex(TransactionDBEntity.MONEY)));
+            while (cByDate.moveToNext())
+                spentMonth += Float.parseFloat(cByDate.getString(cByDate.getColumnIndex(TransactionDBEntity.MONEY)));
+        }
+        tvMonth.setText(spentMonth.toString());
+    }
 }
