@@ -65,5 +65,14 @@
             android:layout_below="@+id/tv_transaction_item_spending"
             android:layout_centerHorizontal="true"
             android:text=""/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:id="@+id/tvSent"
+            android:textSize="30dp"
+            android:layout_marginRight="5dp"
+            android:visibility="invisible"
+            android:layout_alignParentRight="true"/>
 
 </RelativeLayout>
