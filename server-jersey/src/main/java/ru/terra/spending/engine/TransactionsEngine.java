@@ -4,9 +4,12 @@ import org.apache.log4j.Logger;
 import ru.terra.server.engine.AbstractEngine;
 import ru.terra.spending.db.controller.TransactionJpaController;
 import ru.terra.spending.db.entity.Transaction;
+import ru.terra.spending.db.entity.User;
 import ru.terra.spending.dto.TransactionDTO;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Date: 16.04.14
@@ -42,5 +45,12 @@ public class TransactionsEngine extends AbstractEngine<Transaction, TransactionD
     @Override
     public TransactionDTO entityToDto(Transaction transaction) {
         return new TransactionDTO(transaction);
+    }
+
+    public List<TransactionDTO> getFromDate(User user, Long fromDate) {
+        List<TransactionDTO> ret = new ArrayList<>();
+        for (Transaction transaction : ((TransactionJpaController) dbController).findTransactionEntities(user, fromDate))
+            ret.add(entityToDto(transaction));
+        return ret;
     }
 }

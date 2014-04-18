@@ -9,6 +9,7 @@ import ru.terra.spending.db.entity.User;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Query;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -141,6 +142,16 @@ public class TransactionJpaController extends AbstractJpaController<Transaction>
         EntityManager em = getEntityManager();
         try {
             Query q = em.createNamedQuery("Transaction.findByUser").setParameter("uid", user);
+            return q.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    public List<Transaction> findTransactionEntities(User user, Long fromDate) {
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createNamedQuery("Transaction.findByUser").setParameter("trDate", new Date(fromDate)).setParameter("user", user);
             return q.getResultList();
         } finally {
             em.close();

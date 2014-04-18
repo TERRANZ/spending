@@ -12,10 +12,9 @@ import ru.terra.spending.core.constants.Constants;
 import ru.terra.spending.core.constants.URLConstants;
 import ru.terra.spending.core.db.entity.TransactionDBEntity;
 import ru.terra.spending.core.network.JsonAbstractProvider;
-import ru.terra.spending.core.network.dto.OperationResultDTO;
+import ru.terra.spending.core.network.dto.IntegerResultDTO;
 import ru.terra.spending.core.network.dto.TransactionDTO;
 import ru.terra.spending.util.Logger;
-import ru.terra.spending.util.SettingsUtil;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -39,24 +38,25 @@ public class TransactionsJsonProvider extends JsonAbstractProvider {
             while (c.moveToNext())
                 dtos.add(new TransactionDTO(c));
             for (TransactionDTO dto : dtos) {
-                String json = httpReqHelper.runJsonRequest(
-                        URLConstants.DoJson.MobileTransactions.MT_REG_TR.URL,
-                        new BasicNameValuePair(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_UID, SettingsUtil.getSetting(cntxActivity,
-                                Constants.CONFIG_UID, "1")), new BasicNameValuePair(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_TYPE,
-                        dto.type.toString()),
-                        new BasicNameValuePair(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_MONEY, dto.value.toString()),
-                        new BasicNameValuePair(URLConstants.DoJson.MobileTransactions.MT_REG_TR.PARAM_DATE, dto.date.toString()));
-                OperationResultDTO res = new Gson().fromJson(json, OperationResultDTO.class);
-                Logger.i("pushTransacton", "pushed: " + res.retid);
+                String json = httpReqHelper.runJsonRequest(URLConstants.MobileTransactions.MOBILE_TRANSACTIONS +
+                        URLConstants.MobileTransactions.DO_REGISTER,
+                        new BasicNameValuePair(URLConstants.MobileTransactions.PARAM_DATE, dto.date.toString()),
+                        new BasicNameValuePair(URLConstants.MobileTransactions.PARAM_MONEY, dto.value.toString()),
+                        new BasicNameValuePair(URLConstants.MobileTransactions.PARAM_TYPE, dto.type.toString())
+                );
+                IntegerResultDTO res = new Gson().fromJson(json, IntegerResultDTO.class);
+                Logger.i("TransactionsJsonProvider", "pushed: " + res.data);
+                if (res.data == 0)
+                    Logger.i("TransactionsJsonProvider", "Error: " + res.errorMessage);
                 ContentValues cv = new ContentValues();
-                cv.put(TransactionDBEntity.SERVER_ID, res.retid);
+                cv.put(TransactionDBEntity.SERVER_ID, res.data);
                 int updated = cntxActivity.getContentResolver().update(TransactionDBEntity.CONTENT_URI, cv, TransactionDBEntity._ID + " = ?",
                         new String[]{dto.id.toString()});
-                Logger.i("pushTransacton", "updated : " + updated);
+                Logger.i("TransactionsJsonProvider", "updated : " + updated);
             }
             lastSyncDate = new Date().getTime();
         } catch (Exception e) {
-            Logger.i("pushTransacton", "error: " + e.getMessage());
+            Logger.i("TransactionsJsonProvider", "error: " + e.getMessage());
             lastSyncDate = 0L;
             e.printStackTrace();
         }

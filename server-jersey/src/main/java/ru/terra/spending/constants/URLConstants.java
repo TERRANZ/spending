@@ -18,10 +18,10 @@ public class URLConstants extends CoreUrlConstants {
     public class MobileTransactions {
         public static final String MOBILE_TRANSACTIONS = "/mobiletransaction/";
         public static final String DO_REGISTER = "do.transaction.register.json";
+        public static final String DO_LIST_FROMDATE_JSON = "do.list.fromdate.json";
         public static final String PARAM_TYPE = "type";
         public static final String PARAM_MONEY = "money";
         public static final String PARAM_DATE = "date";
-
     }
 
     public class Types {
