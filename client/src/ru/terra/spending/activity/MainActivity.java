@@ -25,7 +25,7 @@ import ru.terra.spending.core.ProjectModule;
 import ru.terra.spending.core.constants.ActivityConstants;
 import ru.terra.spending.core.db.entity.TransactionDBEntity;
 import ru.terra.spending.core.db.entity.TypeDBEntity;
-import ru.terra.spending.core.tasks.PushTransactionsAsyncTask;
+import ru.terra.spending.core.tasks.SyncTransactionsAsyncTask;
 import ru.terra.spending.core.tasks.RecvTypesAsyncTask;
 
 import java.text.DateFormat;
@@ -271,8 +271,8 @@ public class MainActivity extends RoboActivity {
                 Toast.makeText(this, "Синхронизируем типы трат", Toast.LENGTH_SHORT).show();
                 return true;
             }
-            case R.id.mi_main_send_transactions: {
-                new PushTransactionsAsyncTask(this).execute();
+            case R.id.mi_main_sync_transactions: {
+                new SyncTransactionsAsyncTask(this).execute();
                 Toast.makeText(this, "Синхронизируем траты", Toast.LENGTH_SHORT).show();
                 return true;
             }
@@ -306,8 +306,11 @@ public class MainActivity extends RoboActivity {
         minDate.set(currCalendar.get(Calendar.YEAR), currCalendar.get(Calendar.MONTH), currCalendar.get(Calendar.DAY_OF_MONTH), 0, 0);
         Calendar maxDate = Calendar.getInstance();
         maxDate.set(currCalendar.get(Calendar.YEAR), currCalendar.get(Calendar.MONTH), currCalendar.get(Calendar.DAY_OF_MONTH), 23, 59);
-        Cursor cByDate = getContentResolver().query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.DATE + " >= ? OR " + TransactionDBEntity.DATE + " <= ?",
-                new String[]{minDate.getTime().toString(), maxDate.getTime().toString()}, null);
+        Log.i("MainActivity", "currdate = " + currCalendar.getTime());
+        Log.i("MainActivity", "mindate = " + minDate.getTime());
+        Log.i("MainActivity", "maxdate = " + maxDate.getTime());
+        Cursor cByDate = getContentResolver().query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.DATE + " >= ? AND " + TransactionDBEntity.DATE + " <= ?",
+                new String[]{String.valueOf(minDate.getTime().getTime()), String.valueOf(maxDate.getTime().getTime())}, null);
 
         if (cByDate.moveToFirst()) {
             spentDay += Float.parseFloat(cByDate.getString(cByDate.getColumnIndex(TransactionDBEntity.MONEY)));
@@ -325,8 +328,11 @@ public class MainActivity extends RoboActivity {
         minDate.set(currCalendar.get(Calendar.YEAR), currCalendar.get(Calendar.MONTH), 1, 0, 0);
         Calendar maxDate = Calendar.getInstance();
         maxDate.set(currCalendar.get(Calendar.YEAR), currCalendar.get(Calendar.MONTH), currCalendar.getActualMaximum(Calendar.DAY_OF_MONTH), 23, 59);
+        Log.i("MainActivity", "currdate = " + currCalendar.getTime());
+        Log.i("MainActivity", "mindate = " + minDate.getTime());
+        Log.i("MainActivity", "maxdate = " + maxDate.getTime());
         Cursor cByDate = getContentResolver().query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.DATE + " >= ? OR " + TransactionDBEntity.DATE + " <= ?",
-                new String[]{minDate.getTime().toString(), maxDate.getTime().toString()}, null);
+                new String[]{String.valueOf(minDate.getTime().getTime()), String.valueOf(maxDate.getTime().getTime())}, null);
         if (cByDate.moveToFirst()) {
             spentMonth += Float.parseFloat(cByDate.getString(cByDate.getColumnIndex(TransactionDBEntity.MONEY)));
             while (cByDate.moveToNext())

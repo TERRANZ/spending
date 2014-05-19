@@ -14,6 +14,7 @@ import ru.terra.spending.core.db.entity.TransactionDBEntity;
 import ru.terra.spending.core.network.JsonAbstractProvider;
 import ru.terra.spending.core.network.dto.IntegerResultDTO;
 import ru.terra.spending.core.network.dto.TransactionDTO;
+import ru.terra.spending.core.network.dto.TransactionListDTO;
 import ru.terra.spending.util.Logger;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class TransactionsJsonProvider extends JsonAbstractProvider {
         super(c);
     }
 
-    public void pushTransactions() {
+    public void syncTransactions() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(cntxActivity);
         Long lastSyncDate = prefs.getLong(Constants.CONFIG_LAST_SYNC_TRANSACTIONS_TO_SERVER, 0L);
         try {
@@ -54,6 +55,22 @@ public class TransactionsJsonProvider extends JsonAbstractProvider {
                         new String[]{dto.id.toString()});
                 Logger.i("TransactionsJsonProvider", "updated : " + updated);
             }
+
+            c.close();
+
+            String json = httpReqHelper.runSimpleJsonRequest(URLConstants.MobileTransactions.MOBILE_TRANSACTIONS + URLConstants.DoJson.DO_LIST);
+            TransactionListDTO transactions = new Gson().fromJson(json, TransactionListDTO.class);
+            for (TransactionDTO transactionDTO : transactions.data) {
+                if (!checkExists(transactionDTO.id)) {
+                    ContentValues cv = new ContentValues();
+                    cv.put(TransactionDBEntity.MONEY, Double.parseDouble(transactionDTO.value.toString()));
+                    cv.put(TransactionDBEntity.DATE, transactionDTO.date);
+                    cv.put(TransactionDBEntity.TYPE, transactionDTO.type);
+                    cv.put(TransactionDBEntity.SERVER_ID, transactionDTO.id);
+                    cntxActivity.getContentResolver().insert(TransactionDBEntity.CONTENT_URI, cv);
+                }
+            }
+
             lastSyncDate = new Date().getTime();
         } catch (Exception e) {
             Logger.i("TransactionsJsonProvider", "error: " + e.getMessage());
@@ -64,4 +81,17 @@ public class TransactionsJsonProvider extends JsonAbstractProvider {
         editor.putLong(Constants.CONFIG_LAST_SYNC_TRANSACTIONS_TO_SERVER, lastSyncDate);
         editor.commit();
     }
+
+    private boolean checkExists(Integer serverId) {
+        Cursor c = null;
+        try {
+            c = cntxActivity.getContentResolver().query(TransactionDBEntity.CONTENT_URI, null, TransactionDBEntity.SERVER_ID + " = " + serverId.toString(), null, null);
+            return c.moveToFirst();
+        } finally {
+            if (c != null)
+                c.close();
+        }
+
+    }
+
 }

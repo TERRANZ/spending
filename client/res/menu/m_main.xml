@@ -5,7 +5,7 @@
             android:title="Синхронизация">
         <menu>
             <item android:id="@+id/mi_main_recv_types" android:title="Загрузить типы"/>
-            <item android:id="@+id/mi_main_send_transactions" android:title="Выгрузить траты"/>
+            <item android:id="@+id/mi_main_sync_transactions" android:title="Синхронизировать траты"/>
         </menu>
     </item>
     <item android:id="@+id/mi_login" android:title="Вход"></item>
