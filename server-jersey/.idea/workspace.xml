@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="214c3806-59be-4591-ba6c-3eba1011893b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractController.java" afterPath="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractResource.java" afterPath="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractResource.java" />
     </list>
     <ignored path="spending.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,17 +65,7 @@
     <favorites_list name="spending" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MobileTransactionController.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/MobileTransactionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="111" selection-start="1890" selection-end="1890" vertical-scroll-proportion="0.48966268" vertical-offset="0" max-vertical-offset="1206">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -102,7 +91,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/TypeEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/dto/TransactionDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/server/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/TypesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/UIController.java" />
         <option value="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/ResourceController.java" />
@@ -112,15 +100,23 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/UiController.java" />
         <option value="$PROJECT_DIR$/release/main.html" />
         <option value="$PROJECT_DIR$/release/transactions.html" />
-        <option value="$PROJECT_DIR$/release/resources/js/transactions.js" />
         <option value="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractController.java" />
         <option value="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/constants/CoreUrlConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/db/controller/TransactionJpaController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/db/entity/Transaction.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/TransactionsEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/constants/URLConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/TypesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/MobileTransactionController.java" />
+        <option value="$PROJECT_DIR$/release/resources/js/transactions.js" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectFrameBounds">
@@ -156,7 +152,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -165,106 +160,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spending" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server-jersey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spending" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server-jersey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spending" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server-jersey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spending" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server-jersey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spending" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spending" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server-jersey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spending" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,92 +191,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -420,6 +238,86 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <list size="0" />
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -439,30 +337,30 @@
     <frame x="-7" y="-12" width="1934" height="1072" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769555" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32135075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22896698" sideWeight="0.6002179" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39894736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23322684" sideWeight="0.6002179" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32135075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769555" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -488,6 +386,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/MobileTransactionController.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="111" selection-start="1931" selection-end="1931" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1206">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/MobileTransactionController.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="59" selection-start="1521" selection-end="1521" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1206">
           <folding />
         </state>
@@ -501,26 +406,6 @@
     <entry file="file://$PROJECT_DIR$/../../tcore/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="919" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/dto/captcha/CaptchDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="53" selection-end="53" vertical-scroll-proportion="0.039173014" vertical-offset="0" max-vertical-offset="919" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/dto/captcha/CaptchaResponseDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="13" selection-start="54" selection-end="54" vertical-scroll-proportion="0.05875952" vertical-offset="0" max-vertical-offset="919" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/dto/captcha/CaptchaCommonDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="92" selection-end="92" vertical-scroll-proportion="0.07834603" vertical-offset="0" max-vertical-offset="919" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/CaptchaEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="18" selection-start="133" selection-end="133" vertical-scroll-proportion="0.13710555" vertical-offset="0" max-vertical-offset="919" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/YandexCaptcha.java">
@@ -598,15 +483,6 @@
         <state line="33" column="95" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.64635473" vertical-offset="0" max-vertical-offset="919" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/TypesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="321" selection-end="321" vertical-scroll-proportion="0.19586506" vertical-offset="0" max-vertical-offset="919">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="63" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.35179153" vertical-offset="0" max-vertical-offset="921" />
@@ -614,29 +490,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/ResourceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="54" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.8422198" vertical-offset="0" max-vertical-offset="936">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="43" column="54" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.8422198" vertical-offset="0" max-vertical-offset="936" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/CaptchaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="23" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="22" column="23" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/UiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="34" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.7649619" vertical-offset="107" max-vertical-offset="1026">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="45" column="34" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.7649619" vertical-offset="107" max-vertical-offset="1026" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/release/main.html">
@@ -673,11 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/resources/js/transactions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="33" selection-start="529" selection-end="529" vertical-scroll-proportion="0.39173013" vertical-offset="0" max-vertical-offset="919" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/release/transactions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="145" column="24" selection-start="5639" selection-end="5639" vertical-scroll-proportion="0.68721974" vertical-offset="1997" max-vertical-offset="3636" />
@@ -692,19 +551,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/dto/LoginDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="33" selection-start="325" selection-end="325" vertical-scroll-proportion="0.41447368" vertical-offset="0" max-vertical-offset="608">
-          <folding />
-        </state>
+        <state line="14" column="33" selection-start="325" selection-end="325" vertical-scroll-proportion="0.41447368" vertical-offset="0" max-vertical-offset="608" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/constants/CoreUrlConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="60" selection-start="204" selection-end="204" vertical-scroll-proportion="0.15669206" vertical-offset="0" max-vertical-offset="342" />
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/jdk1.7.0_17/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="11" selection-start="5298" selection-end="5298" vertical-scroll-proportion="0.33297062" vertical-offset="1746" max-vertical-offset="20070" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/entity/Transaction.java">
@@ -772,14 +624,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="32" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.5092492" vertical-offset="0" max-vertical-offset="1350">
-          <folding />
-        </state>
+        <state line="42" column="32" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.5092492" vertical-offset="0" max-vertical-offset="1350" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/MobileTransactionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="111" selection-start="1890" selection-end="1890" vertical-scroll-proportion="0.48966268" vertical-offset="0" max-vertical-offset="1206">
+        <state line="1" column="30" selection-start="38" selection-end="38" vertical-scroll-proportion="0.02955665" vertical-offset="0" max-vertical-offset="1206">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/TypesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="66" selection-start="510" selection-end="510" vertical-scroll-proportion="0.20689656" vertical-offset="0" max-vertical-offset="609">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release/resources/js/transactions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="113" selection-end="113" vertical-scroll-proportion="0.07834603" vertical-offset="0" max-vertical-offset="936">
           <folding />
         </state>
       </provider>

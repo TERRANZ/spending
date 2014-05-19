@@ -22,7 +22,7 @@ public class TransactionsListCursorAdapter extends CursorAdapter {
 
     private String getTypeName(Long id) {
         String ret = "не известно";
-        Cursor c = mContext.getContentResolver().query(TypeDBEntity.CONTENT_URI, null, TypeDBEntity._ID + " = ?", new String[]{id.toString()},
+        Cursor c = mContext.getContentResolver().query(TypeDBEntity.CONTENT_URI, null, TypeDBEntity.ID + " = ?", new String[]{id.toString()},
                 null);
         if (c.moveToFirst())
             ret = c.getString(c.getColumnIndex(TypeDBEntity.NAME));

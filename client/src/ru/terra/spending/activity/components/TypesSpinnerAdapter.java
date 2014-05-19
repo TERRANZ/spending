@@ -18,7 +18,7 @@ public class TypesSpinnerAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         ((TextView) view.findViewById(R.id.text1)).setText(cursor.getString(cursor.getColumnIndex(TypeDBEntity.NAME)));
-        view.setTag(cursor.getLong(cursor.getColumnIndex(TypeDBEntity._ID)));
+        view.setTag(cursor.getLong(cursor.getColumnIndex(TypeDBEntity.ID)));
     }
 
     @Override

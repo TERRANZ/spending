@@ -23,7 +23,7 @@ public class MobileTransactionController extends AbstractController<Transaction,
     private TypeEngine typeEngine = new TypeEngine();
 
     public MobileTransactionController() {
-        super(TransactionsEngine.class, true);
+        super(TransactionsEngine.class, true, Transaction.class, TransactionDTO.class);
     }
 
     @POST

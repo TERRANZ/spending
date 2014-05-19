@@ -11,6 +11,6 @@ import javax.ws.rs.Path;
 @Path(URLConstants.Types.TYPES)
 public class TypesController extends AbstractController<TrType, TypeDTO, TypeEngine> {
     public TypesController() {
-        super(TypeEngine.class, false);
+        super(TypeEngine.class, false, TrType.class, TypeDTO.class);
     }
 }
