@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="214c3806-59be-4591-ba6c-3eba1011893b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractController.java" afterPath="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/ServerBoot.java" afterPath="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/ServerBoot.java" />
     </list>
     <ignored path="spending.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20,7 +20,8 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <ui_properties converted="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -56,9 +57,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_rules />
-    <ui_properties />
+    <breakpoint_rules converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -90,16 +89,11 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/dto/TypeDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/TypeEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/dto/TransactionDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/server/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/UIController.java" />
         <option value="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/ResourceController.java" />
         <option value="$PROJECT_DIR$/release/resources/js/login.js" />
-        <option value="$PROJECT_DIR$/release/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/CaptchaController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/UiController.java" />
-        <option value="$PROJECT_DIR$/release/main.html" />
-        <option value="$PROJECT_DIR$/release/transactions.html" />
         <option value="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractController.java" />
         <option value="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/constants/CoreUrlConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/db/controller/TransactionJpaController.java" />
@@ -109,6 +103,15 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/TypesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/MobileTransactionController.java" />
         <option value="$PROJECT_DIR$/release/resources/js/transactions.js" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/server/Main.java" />
+        <option value="$PROJECT_DIR$/../../tcore/pom.xml" />
+        <option value="$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/ServerBoot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/ResourceController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/release/transactions.html" />
+        <option value="$PROJECT_DIR$/release/main.html" />
+        <option value="$PROJECT_DIR$/release/login.html" />
+        <option value="$PROJECT_DIR$/release/home.html" />
       </list>
     </option>
   </component>
@@ -120,10 +123,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="y" value="-12" />
-    <option name="width" value="1934" />
-    <option name="height" value="1072" />
+    <option name="width" value="1920" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -139,7 +140,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -151,7 +152,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -162,6 +162,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -172,9 +173,12 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tcore" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../client" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -190,7 +194,23 @@
       <recent name="ru.terra.spending.db" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.terra.spending.server.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="spending" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -236,6 +256,7 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -256,9 +277,10 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
@@ -318,13 +340,23 @@
       <envs />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="214c3806-59be-4591-ba6c-3eba1011893b" name="Default" comment="" />
@@ -334,23 +366,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-12" width="1934" height="1072" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1049" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769555" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32668066" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32135075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32037815" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22896698" sideWeight="0.6002179" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21614583" sideWeight="0.6002179" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39894736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -367,6 +399,9 @@
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -377,273 +412,391 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/entity/User.java</url>
+          <line>2</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/MobileTransactionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="111" selection-start="1931" selection-end="1931" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1206">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/MobileTransactionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="59" selection-start="1521" selection-end="1521" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1206">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/UsersEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="29" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="1368" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="919" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="919">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/YandexCaptcha.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="45" selection-start="683" selection-end="683" vertical-scroll-proportion="0.31338412" vertical-offset="108" max-vertical-offset="2268" />
+        <state vertical-scroll-proportion="0.31338412" vertical-offset="108" max-vertical-offset="2268">
+          <caret line="22" column="45" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/db/entity/AbstractUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="90" selection-end="90" vertical-scroll-proportion="0.11751904" vertical-offset="0" max-vertical-offset="919" />
+        <state vertical-scroll-proportion="0.11751904" vertical-offset="0" max-vertical-offset="919">
+          <caret line="6" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/db/controllers/AbstractJpaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="22" selection-start="2104" selection-end="2104" vertical-scroll-proportion="0.882481" vertical-offset="305" max-vertical-offset="1224" />
+        <state vertical-scroll-proportion="0.882481" vertical-offset="305" max-vertical-offset="1224">
+          <caret line="70" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/entity/Report.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="42" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.5288357" vertical-offset="288" max-vertical-offset="1728" />
+        <state vertical-scroll-proportion="0.5288357" vertical-offset="288" max-vertical-offset="1728">
+          <caret line="58" column="42" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/controller/TrTypeJpaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="2790" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="2790">
+          <caret line="16" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/db/controllers/AbstractDBController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="22" selection-start="193" selection-end="193" vertical-scroll-proportion="0.17589577" vertical-offset="0" max-vertical-offset="921" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/controller/UserJpaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="82" selection-start="876" selection-end="876" vertical-scroll-proportion="0.6058632" vertical-offset="0" max-vertical-offset="1908" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/controller/ReportJpaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="10" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="3186" />
+        <state vertical-scroll-proportion="0.17589577" vertical-offset="0" max-vertical-offset="921">
+          <caret line="11" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/dto/TypeDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="38" selection-start="152" selection-end="152" vertical-scroll-proportion="0.09793253" vertical-offset="0" max-vertical-offset="919" />
+        <state vertical-scroll-proportion="0.09793253" vertical-offset="0" max-vertical-offset="919">
+          <caret line="5" column="38" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/TypeEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="33" selection-start="612" selection-end="612" vertical-scroll-proportion="0.45048967" vertical-offset="0" max-vertical-offset="919" />
+        <state vertical-scroll-proportion="0.45048967" vertical-offset="0" max-vertical-offset="919">
+          <caret line="23" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/security/SecurityLevel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="36" selection-start="158" selection-end="158" vertical-scroll-proportion="0.15669206" vertical-offset="0" max-vertical-offset="919" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/UsersEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="404" selection-end="404" vertical-scroll-proportion="-0.21545158" vertical-offset="432" max-vertical-offset="1404" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.31338412" vertical-offset="0" max-vertical-offset="1638" />
+        <state vertical-scroll-proportion="0.15669206" vertical-offset="0" max-vertical-offset="919">
+          <caret line="8" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/dto/UserDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="125" selection-end="125" vertical-scroll-proportion="0.07834603" vertical-offset="0" max-vertical-offset="919" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/server/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="95" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.64635473" vertical-offset="0" max-vertical-offset="919" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="63" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.35179153" vertical-offset="0" max-vertical-offset="921" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/ResourceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="54" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.8422198" vertical-offset="0" max-vertical-offset="936" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/CaptchaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="23" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/UiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="34" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.7649619" vertical-offset="107" max-vertical-offset="1026" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/release/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="109" selection-start="6366" selection-end="6366" vertical-scroll-proportion="0.9394619" vertical-offset="2222" max-vertical-offset="3618" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/release/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="27" selection-start="3679" selection-end="3679" vertical-scroll-proportion="0.12107623" vertical-offset="1278" max-vertical-offset="3690" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/release/reg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="612" />
+        <state vertical-scroll-proportion="0.07834603" vertical-offset="0" max-vertical-offset="919">
+          <caret line="5" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/release/tm.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="23" selection-start="54" selection-end="54" vertical-scroll-proportion="0.019586507" vertical-offset="0" max-vertical-offset="919" />
+        <state vertical-scroll-proportion="0.019586507" vertical-offset="0" max-vertical-offset="919">
+          <caret line="1" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/release/resources/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="18" selection-start="9" selection-end="18" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2106" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2106">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/dto/TransactionDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="168" selection-end="168" vertical-scroll-proportion="0.11751904" vertical-offset="0" max-vertical-offset="919">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.11751904" vertical-offset="0" max-vertical-offset="919">
+          <caret line="6" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/release/transactions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="24" selection-start="5639" selection-end="5639" vertical-scroll-proportion="0.68721974" vertical-offset="1997" max-vertical-offset="3636" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/dto/CommonDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="83" selection-end="314" vertical-scroll-proportion="0.118421055" vertical-offset="0" max-vertical-offset="608">
-          <folding />
+        <state vertical-scroll-proportion="0.118421055" vertical-offset="0" max-vertical-offset="608">
+          <caret line="5" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/dto/LoginDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="33" selection-start="325" selection-end="325" vertical-scroll-proportion="0.41447368" vertical-offset="0" max-vertical-offset="608" />
+        <state vertical-scroll-proportion="0.41447368" vertical-offset="0" max-vertical-offset="608">
+          <caret line="14" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/constants/CoreUrlConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="60" selection-start="204" selection-end="204" vertical-scroll-proportion="0.15669206" vertical-offset="0" max-vertical-offset="342" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/entity/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="137" selection-start="743" selection-end="743" vertical-scroll-proportion="0.2742111" vertical-offset="36" max-vertical-offset="2016">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.15669206" vertical-offset="0" max-vertical-offset="342">
+          <caret line="8" column="60" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/TransactionsEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="112" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.6082699" vertical-offset="197" max-vertical-offset="1116">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/controller/TransactionJpaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="127" selection-start="5347" selection-end="5347" vertical-scroll-proportion="0.52992386" vertical-offset="2069" max-vertical-offset="2988">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.6082699" vertical-offset="197" max-vertical-offset="1116">
+          <caret line="42" column="112" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/dto/SimpleDataDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="45" selection-start="338" selection-end="338" vertical-scroll-proportion="0.2937976" vertical-offset="0" max-vertical-offset="919">
+        <state vertical-scroll-proportion="0.2937976" vertical-offset="0" max-vertical-offset="919">
+          <caret line="15" column="45" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/engine/AbstractEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.99891186" vertical-offset="0" max-vertical-offset="1710">
+          <caret line="56" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/dto/ListDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31338412" vertical-offset="0" max-vertical-offset="919">
+          <caret line="19" column="51" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release/resources/js/transactions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07834603" vertical-offset="0" max-vertical-offset="936">
+          <caret line="4" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27361563" vertical-offset="0" max-vertical-offset="1800">
+          <caret line="30" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/engine/UsersEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.882481" vertical-offset="323" max-vertical-offset="1242">
+          <caret line="72" column="62" selection-start-line="13" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/entity/TrType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47007617" vertical-offset="0" max-vertical-offset="1584">
+          <caret line="43" column="67" selection-start-line="42" selection-start-column="4" selection-end-line="43" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5451578" vertical-offset="165" max-vertical-offset="1656">
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/controller/UserJpaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6278564" vertical-offset="107" max-vertical-offset="1728">
+          <caret line="48" column="66" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/entity/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31338412" vertical-offset="0" max-vertical-offset="1890">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/controller/TransactionJpaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44013304" vertical-offset="1529" max-vertical-offset="2772">
+          <caret line="119" column="31" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/TypesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09771987" vertical-offset="0" max-vertical-offset="921">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/UiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25407165" vertical-offset="0" max-vertical-offset="921">
+          <caret line="22" column="75" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/MobileTransactionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35179153" vertical-offset="0" max-vertical-offset="1206">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1350">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/CaptchaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27361563" vertical-offset="0" max-vertical-offset="921">
+          <caret line="27" column="37" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../tcore/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92056584" vertical-offset="1008" max-vertical-offset="2466">
+          <caret line="103" column="27" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/config/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13710555" vertical-offset="0" max-vertical-offset="919">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/constants/ConfigConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05875952" vertical-offset="0" max-vertical-offset="919">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2412">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/db/controller/ReportJpaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5254054" vertical-offset="270" max-vertical-offset="3024">
+          <caret line="62" column="41" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/constants/URLConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="641" selection-end="641" vertical-scroll-proportion="0.2937976" vertical-offset="0" max-vertical-offset="1134">
+        <state vertical-scroll-proportion="0.63027024" vertical-offset="209" max-vertical-offset="1134">
+          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/engine/AbstractEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="18" selection-start="1643" selection-end="1643" vertical-scroll-proportion="0.99891186" vertical-offset="0" max-vertical-offset="1710" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/dto/ListDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="51" selection-start="318" selection-end="318" vertical-scroll-proportion="0.31338412" vertical-offset="0" max-vertical-offset="919">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="21" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.2742111" vertical-offset="0" max-vertical-offset="1800" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/controller/AbstractController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="40" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.5288357" vertical-offset="0" max-vertical-offset="1404" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="32" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.5092492" vertical-offset="0" max-vertical-offset="1350" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/MobileTransactionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="30" selection-start="38" selection-end="38" vertical-scroll-proportion="0.02955665" vertical-offset="0" max-vertical-offset="1206">
+        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2070">
+          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/TypesController.java">
+    <entry file="file://$PROJECT_DIR$/tm.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="66" selection-start="510" selection-end="510" vertical-scroll-proportion="0.20689656" vertical-offset="0" max-vertical-offset="609">
+        <state vertical-scroll-proportion="0.029032258" vertical-offset="0" max-vertical-offset="620">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/resources/js/transactions.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/controller/ResourceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="113" selection-end="113" vertical-scroll-proportion="0.07834603" vertical-offset="0" max-vertical-offset="936">
+        <state vertical-scroll-proportion="0.5254054" vertical-offset="0" max-vertical-offset="925">
+          <caret line="36" column="115" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../tcore/src/main/java/ru/terra/server/ServerBoot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15567568" vertical-offset="0" max-vertical-offset="2466">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/terra/spending/server/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19459459" vertical-offset="0" max-vertical-offset="925">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31135136" vertical-offset="0" max-vertical-offset="925">
+          <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release/transactions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.311804" vertical-offset="152" max-vertical-offset="3636">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release/reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.100222714" vertical-offset="0" max-vertical-offset="898">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.311804" vertical-offset="152" max-vertical-offset="3618">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3111639" vertical-offset="1556" max-vertical-offset="3654">
+          <caret line="101" column="39" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5011136" vertical-offset="90" max-vertical-offset="3690">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>

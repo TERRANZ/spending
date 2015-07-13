@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response;
  * Date: 13.02.14
  * Time: 11:47
  */
-@Path(URLConstants.Resources.RESOURCES)
+//@Path(URLConstants.Resources.RESOURCES)
 public class ResourceController {
     private Logger logger = Logger.getLogger(this.getClass());
 

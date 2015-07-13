@@ -224,7 +224,7 @@ public class MainActivity extends RoboActivity {
                         minute = c.get(Calendar.MINUTE);
                     }
                 } catch (ParseException e) {
-                    Log.d(getClass().getSimpleName(), "cant parse date = " + c, e);
+                    Log.d("Edit date", "cant parse date = " + c, e);
                 }
                 final Dialog dialog;
                 TimeSetListenerImpl listener = new TimeSetListenerImpl(etDate);

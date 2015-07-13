@@ -10,11 +10,11 @@
 		<class>ru.terra.spending.db.entity.TrType</class>
 		<class>ru.terra.spending.db.entity.Report</class>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/spending" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://terranout.ath.cx:3306/spending" />
 			<property name="javax.persistence.jdbc.password" value="spending" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.user" value="spending" />
-			<property name="eclipselink.ddl-generation" value="update" />
+			<property name="eclipselink.ddl-generation" value="create-tables" />
 		</properties>
 	</persistence-unit>
 </persistence>
