@@ -1,0 +1,14 @@
+<resources>
+    <color name="g_blue">#205197</color>
+    <color name="g_pink_login_text">#ff7eab</color>
+    <color name="g_red_error_text">#f6402c</color>
+    <color name="g_blue_text">#3e82f7</color>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- theme customizations -->
+        <!--<item name="android:background">@color/g_blue</item>-->
+        <!--<item name="android:windowBackground">@color/g_blue</item>-->
+        <!--<item name="android:colorBackground">@color/g_blue</item>-->
+    </style>
+
+</resources>
