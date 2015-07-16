@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical|center_horizontal"
+             android:orientation="vertical">
+
+    <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_form_uname">
+        </TextView>
+
+        <EditText
+                android:id="@+id/editLogin"
+                android:layout_width="158dip"
+                android:layout_height="wrap_content"
+                android:inputType="textNoSuggestions">
+        </EditText>
+    </TableRow>
+
+    <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_form_password">
+        </TextView>
+
+        <EditText
+                android:id="@+id/editPass"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword">
+        </EditText>
+    </TableRow>
+
+    <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="loginOk"
+            android:text="@string/login_form_login">
+    </Button>
+
+</TableLayout>
